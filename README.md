@@ -183,7 +183,6 @@ npm run lint        # Run ESLint
 
 **Diego Román Bruno Solís**
 - Email: diego.bruno5@outlook.com
-- Phone: 55 7615 8050
 - GitHub: [@Bruno5613](https://github.com/Bruno5613)
 
 ---
