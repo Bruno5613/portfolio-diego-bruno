@@ -11,10 +11,16 @@ export interface ProjectsTranslation {
   darwinFeature3: string;
   mobileFirstDesign: string;
   crossPlatform: string;
-  cryptoTitle: string;
-  securityFocused: string;
-  cryptoDescription: string;
-  cryptoFeature1: string;
-  cryptoFeature2: string;
-  cryptoFeature3: string;
+  vckyTitle: string;
+  staticWebsite: string;
+  vckyDescription: string;
+  vckyFeature1: string;
+  vckyFeature2: string;
+  vckyFeature3: string;
+  petirrojoTitle: string;
+  angularProject: string;
+  petirrojoDescription: string;
+  petirrojoFeature1: string;
+  petirrojoFeature2: string;
+  petirrojoFeature3: string;
 }

@@ -15,6 +15,7 @@
           <a href="#experience" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">{{ t.nav.experience }}</a>
           <a href="#skills" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">{{ t.nav.skills }}</a>
           <a href="#projects" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">{{ t.nav.projects }}</a>
+          <a href="#services" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">{{ t.nav.services }}</a>
           <a href="#contact" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">{{ t.nav.contact }}</a>
         </div>
         
@@ -24,7 +25,7 @@
             (change)="changeLanguage($any($event.target).value)" 
             [value]="currentLanguage"
             class="appearance-none bg-primary-100 dark:bg-primary-800 border border-primary-200 dark:border-primary-700 text-primary-700 dark:text-primary-300 px-2 py-1.5 md:px-3 md:py-2 rounded-lg text-xs font-medium hover:bg-primary-200 dark:hover:bg-primary-700 transition-colors duration-300 cursor-pointer pr-5 md:pr-8">
-            <option value="es">🇪🇸 ES</option>
+            <option value="es">🇲🇽 MX</option>
             <option value="en">🇺🇸 EN</option>
             <option value="de">🇩🇪 DE</option>
           </select>
@@ -74,6 +75,11 @@
            class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2"
            (click)="closeMobileMenu()">
           {{ t.nav.projects }}
+        </a>
+        <a href="#services" 
+           class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2"
+           (click)="closeMobileMenu()">
+          {{ t.nav.services }}
         </a>
         <a href="#contact" 
            class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2"
@@ -750,7 +756,7 @@
               <div class="flex flex-wrap gap-2">
                 <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm font-medium">Ionic</span>
                 <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm font-medium">Angular</span>
-                <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm font-medium">Node.js</span>
+                <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm font-medium">Laravel</span>
                 <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm font-medium">PostgreSQL</span>
               </div>
             </div>
@@ -784,15 +790,15 @@
             </svg>
           </div>
           <div>
-            <h3 class="text-xl font-bold text-white mb-1">{{ t.projects.cryptoTitle }}</h3>
+            <h3 class="text-xl font-bold text-white mb-1">{{ t.projects.vckyTitle }}</h3>
             <span class="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full text-xs font-medium">
-              {{ t.projects.securityFocused }}
+              {{ t.projects.staticWebsite }}
             </span>
           </div>
         </div>
         
         <p class="text-primary-200 leading-relaxed mb-6">
-          {{ t.projects.cryptoDescription }}
+          {{ t.projects.vckyDescription }}
         </p>
         
         <div class="space-y-3 mb-6">
@@ -800,47 +806,58 @@
             <svg class="w-4 h-4 mr-2 text-accent-400" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            {{ t.projects.cryptoFeature1 }}
+            {{ t.projects.vckyFeature1 }}
           </div>
           <div class="flex items-center text-sm text-primary-300">
             <svg class="w-4 h-4 mr-2 text-accent-400" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            {{ t.projects.cryptoFeature2 }}
+            {{ t.projects.vckyFeature2 }}
           </div>
           <div class="flex items-center text-sm text-primary-300">
             <svg class="w-4 h-4 mr-2 text-accent-400" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            {{ t.projects.cryptoFeature3 }}
+            {{ t.projects.vckyFeature3 }}
           </div>
         </div>
         
-        <div class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="px-2 py-1 bg-white/10 text-primary-300 rounded-full text-xs">Angular</span>
           <span class="px-2 py-1 bg-white/10 text-primary-300 rounded-full text-xs">TypeScript</span>
-          <span class="px-2 py-1 bg-white/10 text-primary-300 rounded-full text-xs">Node.js</span>
-          <span class="px-2 py-1 bg-white/10 text-primary-300 rounded-full text-xs">Cryptography</span>
+          <span class="px-2 py-1 bg-white/10 text-primary-300 rounded-full text-xs">TailwindCSS</span>
+        </div>
+        
+        <div class="flex justify-end">
+          <a href="https://vcky.com.mx/" target="_blank" rel="noopener noreferrer" 
+             class="inline-flex items-center px-4 py-2 bg-accent-500 hover:bg-accent-600 text-white rounded-lg font-medium transition-colors">
+            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+              <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-1a1 1 0 10-2 0v1H5V7h1a1 1 0 000-2H5z"></path>
+            </svg>
+            Ver Sitio
+          </a>
         </div>
       </div>
       
-      <!-- Bigrams Analysis Project -->
+      <!-- Petirrojo Project -->
       <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover-lift fade-in-up delay-500">
         <div class="flex items-center mb-6">
-          <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center text-white font-bold text-lg mr-4">
+          <div class="w-10 h-10 bg-gradient-to-br from-red-500 to-orange-500 rounded-xl flex items-center justify-center text-white font-bold text-lg mr-4">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path>
+              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
             </svg>
           </div>
           <div>
-            <h3 class="text-xl font-bold text-white mb-1">Bigrams Analysis</h3>
+            <h3 class="text-xl font-bold text-white mb-1">{{ t.projects.petirrojoTitle }}</h3>
             <span class="bg-orange-500/20 text-orange-300 px-2 py-1 rounded-full text-xs font-medium">
-              AI/ML
+              {{ t.projects.angularProject }}
             </span>
           </div>
         </div>
         
         <p class="text-primary-200 leading-relaxed mb-6">
-          Advanced text analysis system implementing NLP techniques for bigram extraction and statistical analysis of textual data.
+          {{ t.projects.petirrojoDescription }}
         </p>
         
         <div class="space-y-3 mb-6">
@@ -848,26 +865,27 @@
             <svg class="w-4 h-4 mr-2 text-accent-400" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            Text preprocessing and tokenization
+            {{ t.projects.petirrojoFeature1 }}
           </div>
           <div class="flex items-center text-sm text-primary-300">
             <svg class="w-4 h-4 mr-2 text-accent-400" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            Pattern recognition algorithms
+            {{ t.projects.petirrojoFeature2 }}
           </div>
           <div class="flex items-center text-sm text-primary-300">
             <svg class="w-4 h-4 mr-2 text-accent-400" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            Data visualization and reporting
+            {{ t.projects.petirrojoFeature3 }}
           </div>
         </div>
         
         <div class="flex flex-wrap gap-2">
-          <span class="px-2 py-1 bg-white/10 text-primary-300 rounded-full text-xs">Python</span>
-          <span class="px-2 py-1 bg-white/10 text-primary-300 rounded-full text-xs">NLP</span>
-          <span class="px-2 py-1 bg-white/10 text-primary-300 rounded-full text-xs">Statistics</span>
+          <span class="px-2 py-1 bg-white/10 text-primary-300 rounded-full text-xs">Angular</span>
+          <span class="px-2 py-1 bg-white/10 text-primary-300 rounded-full text-xs">Angular Material</span>
+          <span class="px-2 py-1 bg-white/10 text-primary-300 rounded-full text-xs">Auth0</span>
+          <span class="px-2 py-1 bg-white/10 text-primary-300 rounded-full text-xs">Bootstrap</span>
         </div>
       </div>
     </div>
@@ -883,14 +901,14 @@
   <div class="container-max relative">
     <div class="text-center mb-16">
       <span class="inline-block px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-semibold mb-4 fade-in-up">
-        What I can do for you
+        {{ t.services.title }}
       </span>
       <h2 class="text-4xl md:text-5xl font-bold text-primary-900 mb-6 fade-in-up delay-100">
-        Services I <span class="gradient-text">Offer</span>
+        {{ t.services.subtitle }} <span class="gradient-text">{{ t.services.offer }}</span>
       </h2>
       <div class="w-24 h-1 bg-gradient-to-r from-accent-500 to-accent-400 mx-auto rounded-full fade-in-up delay-200"></div>
       <p class="text-lg text-primary-600 mt-6 max-w-2xl mx-auto fade-in-up delay-300">
-        Comprehensive solutions to bring your digital ideas to life with cutting-edge technology
+        {{ t.services.description }}
       </p>
     </div>
     
@@ -1068,7 +1086,7 @@
         
         
         <div class="border-t border-primary-800 pt-6">
-          <h4 class="text-lg font-semibold text-primary-200 mb-6">Redes Profesionales</h4>
+          <h4 class="text-lg font-semibold text-primary-200 mb-6">{{ t.services.professionalNetworks }}</h4>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <!-- LinkedIn -->
             <a href="https://www.linkedin.com/in/diego-roman-bruno-solis" target="_blank" rel="noopener noreferrer"

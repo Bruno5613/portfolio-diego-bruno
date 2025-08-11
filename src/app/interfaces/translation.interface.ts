@@ -6,6 +6,7 @@ import { SkillsTranslation } from './skills.interface';
 import { ProjectsTranslation } from './projects.interface';
 import { ContactTranslation } from './contact.interface';
 import { FooterTranslation } from './footer.interface';
+import { ServicesTranslation } from './services.interface';
 
 export interface Translation {
   nav: NavTranslation;
@@ -14,6 +15,7 @@ export interface Translation {
   experience: ExperienceTranslation;
   skills: SkillsTranslation;
   projects: ProjectsTranslation;
+  services: ServicesTranslation;
   contact: ContactTranslation;
   footer: FooterTranslation;
 }
