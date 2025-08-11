@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Translation } from '../interfaces/translation.interface';
 import { spanishTranslations, englishTranslations, germanTranslations } from '../translations';
 
@@ -14,18 +15,23 @@ export class TranslationService {
     de: germanTranslations
   };
 
-  constructor() {
-    // Load language from localStorage if available
-    const savedLanguage = localStorage.getItem('language');
-    if (savedLanguage && ['es', 'en', 'de'].includes(savedLanguage)) {
-      this.currentLanguage = savedLanguage as 'es' | 'en' | 'de';
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    // Only use localStorage in browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      const savedLanguage = localStorage.getItem('language');
+      if (savedLanguage && ['es', 'en', 'de'].includes(savedLanguage)) {
+        this.currentLanguage = savedLanguage as 'es' | 'en' | 'de';
+      }
     }
   }
 
   setLanguage(language: 'es' | 'en' | 'de'): void {
     if (['es', 'en', 'de'].includes(language)) {
       this.currentLanguage = language;
-      localStorage.setItem('language', language);
+      // Only use localStorage in browser environment
+      if (isPlatformBrowser(this.platformId)) {
+        localStorage.setItem('language', language);
+      }
     }
   }
 

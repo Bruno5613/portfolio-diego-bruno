@@ -1,4 +1,5 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from './services/translation.service';
@@ -16,12 +17,18 @@ export class AppComponent implements OnInit, AfterViewInit {
   isMobileMenuOpen = false;
   private observer!: IntersectionObserver;
 
-  constructor(public translationService: TranslationService) {}
+  constructor(
+    public translationService: TranslationService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngOnInit() {
     // Force dark mode for navigation
     this.isDarkMode = true;
-    this.applyTheme();
+    // Only apply theme in browser
+    if (isPlatformBrowser(this.platformId)) {
+      this.applyTheme();
+    }
   }
 
   get currentLanguage(): 'es' | 'en' | 'de' {
@@ -47,7 +54,10 @@ export class AppComponent implements OnInit, AfterViewInit {
 
 
   ngAfterViewInit() {
-    this.setupScrollAnimations();
+    // Only setup scroll animations in browser
+    if (isPlatformBrowser(this.platformId)) {
+      this.setupScrollAnimations();
+    }
   }
 
   private setupScrollAnimations() {
