@@ -2,6 +2,8 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from './services/translation.service';
+import { Translation } from './interfaces/translation.interface';
 
 @Component({
   selector: 'app-root',
@@ -11,20 +13,30 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'Diego Bruno - Full Stack Developer';
-  isDarkMode = false;
+  isDarkMode = true;
   private observer!: IntersectionObserver;
 
+  constructor(public translationService: TranslationService) {}
+
   ngOnInit() {
-    // Check for saved theme preference or default to light mode
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      this.isDarkMode = savedTheme === 'dark';
-    } else {
-      // Check system preference
-      this.isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    }
+    // Force dark mode for navigation
+    this.isDarkMode = true;
     this.applyTheme();
   }
+
+  get currentLanguage(): 'es' | 'en' | 'de' {
+    return this.translationService.getCurrentLanguage();
+  }
+
+  changeLanguage(language: string | 'es' | 'en' | 'de') {
+    const lang = language as 'es' | 'en' | 'de';
+    this.translationService.setLanguage(lang);
+  }
+
+  get t(): Translation {
+    return this.translationService.getTranslations();
+  }
+
 
   ngAfterViewInit() {
     this.setupScrollAnimations();
@@ -53,11 +65,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
   }
 
-  toggleTheme() {
-    this.isDarkMode = !this.isDarkMode;
-    this.applyTheme();
-    localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
-  }
 
   private applyTheme() {
     if (this.isDarkMode) {

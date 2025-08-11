@@ -7,27 +7,30 @@
       <h2 class="text-2xl font-bold text-primary-900 dark:text-white hover:text-accent-600 dark:hover:text-accent-400 transition-colors cursor-pointer">Diego Bruno</h2>
       <div class="flex items-center space-x-8">
         <div class="hidden md:flex space-x-8">
-          <a href="#about" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">About</a>
-          <a href="#experience" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">Experience</a>
-          <a href="#skills" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">Skills</a>
-          <a href="#projects" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">Projects</a>
-          <a href="#contact" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">Contact</a>
+          <a href="#about" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">{{ t.nav.about }}</a>
+          <a href="#experience" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">{{ t.nav.experience }}</a>
+          <a href="#skills" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">{{ t.nav.skills }}</a>
+          <a href="#projects" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">{{ t.nav.projects }}</a>
+          <a href="#contact" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">{{ t.nav.contact }}</a>
         </div>
         
-        <!-- Theme Toggle -->
-        <button 
-          (click)="toggleTheme()" 
-          class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-800 border border-primary-200 dark:border-primary-700 flex items-center justify-center hover:bg-primary-200 dark:hover:bg-primary-700 transition-colors duration-300 group"
-          aria-label="Toggle theme">
-          <!-- Sun Icon (Light Mode) -->
-          <svg *ngIf="!isDarkMode" class="w-5 h-5 text-primary-700 group-hover:text-accent-600 transition-colors" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
-          </svg>
-          <!-- Moon Icon (Dark Mode) -->
-          <svg *ngIf="isDarkMode" class="w-5 h-5 text-primary-300 group-hover:text-accent-400 transition-colors" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-          </svg>
-        </button>
+        <!-- Language Selector -->
+        <div class="relative">
+          <select 
+            (change)="changeLanguage($any($event.target).value)" 
+            [value]="currentLanguage"
+            class="appearance-none bg-primary-100 dark:bg-primary-800 border border-primary-200 dark:border-primary-700 text-primary-700 dark:text-primary-300 px-3 py-2 rounded-lg text-sm font-medium hover:bg-primary-200 dark:hover:bg-primary-700 transition-colors duration-300 cursor-pointer pr-8">
+            <option value="es">🇪🇸 ES</option>
+            <option value="en">🇺🇸 EN</option>
+            <option value="de">🇩🇪 DE</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-primary-500">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+        </div>
+        
       </div>
     </div>
   </div>
@@ -48,51 +51,45 @@
       <div class="text-left fade-in-up">
         <div class="mb-6">
           <span class="inline-block px-4 py-2 bg-accent-500/20 text-accent-300 rounded-full text-sm font-medium mb-4 fade-in-up delay-100">
-            Welcome to my digital space
+            {{ t.hero.welcome }}
           </span>
         </div>
         
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 fade-in-up delay-200">
-          Diego Román<br>
-          <span class="bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent">
-            Bruno Solís
-          </span>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 fade-in-up delay-200" [innerHTML]="t.hero.title">
         </h1>
         
-        <p class="text-xl md:text-2xl text-primary-200 mb-6 fade-in-up delay-300">
-          Computer Engineer & 
-          <span class="text-accent-300 font-semibold">Full Stack Developer</span>
+        <p class="text-xl md:text-2xl text-primary-200 mb-6 fade-in-up delay-300" [innerHTML]="t.hero.subtitle">
         </p>
         
         <p class="text-lg text-primary-300 mb-8 max-w-xl fade-in-up delay-400">
-          Transforming ideas into powerful digital experiences using cutting-edge technologies like Angular, Ionic, and TypeScript.
+          {{ t.hero.description }}
         </p>
         
         <!-- Stats -->
         <div class="grid grid-cols-3 gap-6 mb-8 fade-in-up delay-500">
           <div class="text-center">
             <div class="text-2xl font-bold text-accent-400">3+</div>
-            <div class="text-sm text-primary-300">Years Experience</div>
+            <div class="text-sm text-primary-300">{{ t.hero.yearsExperience }}</div>
           </div>
           <div class="text-center">
             <div class="text-2xl font-bold text-accent-400">15+</div>
-            <div class="text-sm text-primary-300">Projects Completed</div>
+            <div class="text-sm text-primary-300">{{ t.hero.projectsCompleted }}</div>
           </div>
           <div class="text-center">
             <div class="text-2xl font-bold text-accent-400">10+</div>
-            <div class="text-sm text-primary-300">Technologies</div>
+            <div class="text-sm text-primary-300">{{ t.hero.technologies }}</div>
           </div>
         </div>
         
         <div class="flex flex-col sm:flex-row gap-4 fade-in-up delay-600">
           <a href="#contact" class="bg-accent-500 hover:bg-accent-400 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-xl inline-flex items-center justify-center group">
-            Let's Collaborate
+            {{ t.hero.getInTouch }}
             <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
             </svg>
           </a>
           <a href="#projects" class="border-2 border-accent-400 text-accent-400 hover:bg-accent-400 hover:text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg inline-flex items-center justify-center">
-            View Portfolio
+            {{ t.hero.viewWork }}
           </a>
         </div>
       </div>
@@ -126,7 +123,7 @@
     <!-- Scroll Indicator -->
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 fade-in-up delay-700">
       <div class="flex flex-col items-center text-primary-300">
-        <span class="text-sm mb-2">Scroll to explore</span>
+        <span class="text-sm mb-2">{{ t.hero.scrollToExplore }}</span>
         <div class="w-6 h-10 border-2 border-primary-300 rounded-full flex justify-center">
           <div class="w-1 h-3 bg-accent-400 rounded-full mt-2 animate-bounce"></div>
         </div>
@@ -144,10 +141,10 @@
   <div class="container-max relative">
     <div class="text-center mb-16">
       <span class="inline-block px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-semibold mb-4 fade-in-up">
-        Get to know me
+        {{ t.about.getToKnowMe }}
       </span>
       <h2 class="text-4xl md:text-5xl font-bold text-primary-900 mb-6 fade-in-up delay-100">
-        About <span class="gradient-text">Me</span>
+        {{ t.about.title }} <span class="gradient-text">{{ t.about.me }}</span>
       </h2>
       <div class="w-24 h-1 bg-gradient-to-r from-accent-500 to-accent-400 mx-auto rounded-full fade-in-up delay-200"></div>
     </div>
@@ -163,9 +160,9 @@
               </svg>
             </div>
             <div>
-              <h3 class="text-xl font-bold text-primary-900 mb-2">Education & Foundation</h3>
+              <h3 class="text-xl font-bold text-primary-900 mb-2">{{ t.about.educationTitle }}</h3>
               <p class="text-primary-600 leading-relaxed">
-                Computer Engineer from UNAM with specialized training in mobile applications development. My academic foundation at one of Mexico's top universities shaped my analytical thinking and problem-solving approach.
+                {{ t.about.educationDescription }}
               </p>
             </div>
           </div>
@@ -179,9 +176,9 @@
               </svg>
             </div>
             <div>
-              <h3 class="text-xl font-bold text-primary-900 mb-2">Professional Journey</h3>
+              <h3 class="text-xl font-bold text-primary-900 mb-2">{{ t.about.professionalTitle }}</h3>
               <p class="text-primary-600 leading-relaxed">
-                Currently thriving as a Middle Frontend Developer at JAAK IT while maintaining my independent practice. This dual role allows me to stay cutting-edge with enterprise solutions while bringing startup agility to personal projects.
+                {{ t.about.professionalDescription }}
               </p>
             </div>
           </div>
@@ -192,45 +189,45 @@
       <div class="space-y-8 fade-in-up delay-500">
         <!-- Key Achievements -->
         <div class="bg-gradient-to-br from-primary-900 to-accent-900 rounded-3xl p-8 text-white">
-          <h3 class="text-2xl font-bold mb-6">Key Highlights</h3>
+          <h3 class="text-2xl font-bold mb-6">{{ t.about.keyHighlights }}</h3>
           <div class="grid grid-cols-2 gap-6">
             <div class="text-center">
               <div class="text-3xl font-bold text-accent-300 mb-1">3+</div>
-              <div class="text-sm text-primary-200">Years of Experience</div>
+              <div class="text-sm text-primary-200">{{ t.about.yearsExperience }}</div>
             </div>
             <div class="text-center">
               <div class="text-3xl font-bold text-accent-300 mb-1">15+</div>
-              <div class="text-sm text-primary-200">Projects Delivered</div>
+              <div class="text-sm text-primary-200">{{ t.about.projectsDelivered }}</div>
             </div>
             <div class="text-center">
               <div class="text-3xl font-bold text-accent-300 mb-1">100%</div>
-              <div class="text-sm text-primary-200">Client Satisfaction</div>
+              <div class="text-sm text-primary-200">{{ t.about.clientSatisfaction }}</div>
             </div>
             <div class="text-center">
               <div class="text-3xl font-bold text-accent-300 mb-1">24/7</div>
-              <div class="text-sm text-primary-200">Dedicated Support</div>
+              <div class="text-sm text-primary-200">{{ t.about.dedicatedSupport }}</div>
             </div>
           </div>
         </div>
         
         <!-- Expertise Areas -->
         <div class="space-y-4">
-          <h3 class="text-xl font-bold text-primary-900">Core Expertise</h3>
+          <h3 class="text-xl font-bold text-primary-900">{{ t.about.coreExpertise }}</h3>
           <div class="space-y-3">
             <div class="flex items-center justify-between bg-white rounded-xl p-4 shadow-md border border-gray-100">
-              <span class="font-semibold text-primary-800">Full-Stack Development</span>
+              <span class="font-semibold text-primary-800">{{ t.about.fullStackDevelopment }}</span>
               <div class="w-16 h-2 bg-accent-200 rounded-full overflow-hidden">
                 <div class="w-full h-full bg-accent-500 rounded-full"></div>
               </div>
             </div>
             <div class="flex items-center justify-between bg-white rounded-xl p-4 shadow-md border border-gray-100">
-              <span class="font-semibold text-primary-800">Mobile Applications</span>
+              <span class="font-semibold text-primary-800">{{ t.about.mobileApplications }}</span>
               <div class="w-16 h-2 bg-accent-200 rounded-full overflow-hidden">
                 <div class="w-14 h-full bg-accent-500 rounded-full"></div>
               </div>
             </div>
             <div class="flex items-center justify-between bg-white rounded-xl p-4 shadow-md border border-gray-100">
-              <span class="font-semibold text-primary-800">System Architecture</span>
+              <span class="font-semibold text-primary-800">{{ t.about.systemArchitecture }}</span>
               <div class="w-16 h-2 bg-accent-200 rounded-full overflow-hidden">
                 <div class="w-12 h-full bg-accent-500 rounded-full"></div>
               </div>
@@ -251,10 +248,10 @@
   <div class="container-max relative">
     <div class="text-center mb-16">
       <span class="inline-block px-4 py-2 bg-accent-500/20 text-accent-300 rounded-full text-sm font-semibold mb-4 fade-in-up">
-        My professional journey
+        {{ t.experience.professionalJourney }}
       </span>
       <h2 class="text-4xl md:text-5xl font-bold mb-6 fade-in-up delay-100">
-        Professional <span class="text-accent-300">Experience</span>
+        {{ t.experience.title }} <span class="text-accent-300">{{ t.experience.experience }}</span>
       </h2>
       <div class="w-24 h-1 bg-gradient-to-r from-accent-400 to-accent-300 mx-auto rounded-full fade-in-up delay-200"></div>
     </div>
@@ -281,29 +278,28 @@
                 <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover-lift">
                   <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-6">
                     <div>
-                      <h3 class="text-2xl font-bold text-white mb-2">Middle Frontend Developer</h3>
-                      <p class="text-accent-300 font-semibold text-lg mb-2">JAAK IT</p>
+                      <h3 class="text-2xl font-bold text-white mb-2">{{ t.experience.jaakTitle }}</h3>
+                      <p class="text-accent-300 font-semibold text-lg mb-2">{{ t.experience.jaakCompany }}</p>
                       <div class="flex items-center text-primary-200 text-sm">
                         <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                           <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
                         </svg>
-                        Present
+                        {{ t.experience.present }}
                       </div>
                     </div>
                     <span class="bg-green-500/20 text-green-300 px-4 py-2 rounded-full text-sm font-medium mt-4 lg:mt-0">
-                      • Currently Active
+                      • {{ t.experience.currentlyActive }}
                     </span>
                   </div>
                   
                   <p class="text-primary-100 leading-relaxed mb-6">
-                    Leading frontend development initiatives, creating scalable web applications and reusable component libraries. 
-                    Working with cutting-edge frameworks to deliver high-performance, user-centric solutions.
+                    {{ t.experience.jaakDescription }}
                   </p>
                   
                   <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">React/Angular</span>
-                    <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">Component Architecture</span>
-                    <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">Team Leadership</span>
+                    <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">{{ t.experience.skills.reactAngular }}</span>
+                    <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">{{ t.experience.skills.componentArchitecture }}</span>
+                    <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">{{ t.experience.skills.teamLeadership }}</span>
                   </div>
                 </div>
               </div>
@@ -323,29 +319,28 @@
                 <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover-lift">
                   <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-6">
                     <div>
-                      <h3 class="text-2xl font-bold text-white mb-2">Independent Full Stack Developer</h3>
-                      <p class="text-accent-300 font-semibold text-lg mb-2">Freelance</p>
+                      <h3 class="text-2xl font-bold text-white mb-2">{{ t.experience.freelanceTitle }}</h3>
+                      <p class="text-accent-300 font-semibold text-lg mb-2">{{ t.experience.freelanceCompany }}</p>
                       <div class="flex items-center text-primary-200 text-sm">
                         <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                           <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
                         </svg>
-                        May 2022 - Present
+                        {{ t.experience.freelancePeriod }}
                       </div>
                     </div>
                     <span class="bg-accent-500/20 text-accent-300 px-4 py-2 rounded-full text-sm font-medium mt-4 lg:mt-0">
-                      Ongoing
+                      {{ t.experience.ongoing }}
                     </span>
                   </div>
                   
                   <p class="text-primary-100 leading-relaxed mb-6">
-                    Building end-to-end solutions for diverse clients, from startups to established businesses. 
-                    Specializing in modern web and mobile applications with focus on performance and user experience.
+                    {{ t.experience.freelanceDescription }}
                   </p>
                   
                   <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">Full-Stack Development</span>
-                    <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">Mobile Apps</span>
-                    <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">Client Relations</span>
+                    <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">{{ t.experience.skills.fullStackDevelopment }}</span>
+                    <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">{{ t.experience.skills.mobileApps }}</span>
+                    <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">{{ t.experience.skills.clientRelations }}</span>
                   </div>
                 </div>
               </div>
@@ -365,29 +360,28 @@
                 <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover-lift">
                   <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-6">
                     <div>
-                      <h3 class="text-2xl font-bold text-white mb-2">Developer</h3>
-                      <p class="text-accent-300 font-semibold text-lg mb-2">Digital Identity Coordination, UNAM</p>
+                      <h3 class="text-2xl font-bold text-white mb-2">{{ t.experience.unamTitle }}</h3>
+                      <p class="text-accent-300 font-semibold text-lg mb-2">{{ t.experience.unamCompany }}</p>
                       <div class="flex items-center text-primary-200 text-sm">
                         <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                           <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
                         </svg>
-                        June 2021 - December 2021
+                        {{ t.experience.unamPeriod }}
                       </div>
                     </div>
                     <span class="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full text-sm font-medium mt-4 lg:mt-0">
-                      Mission Critical
+                      {{ t.experience.missionCritical }}
                     </span>
                   </div>
                   
                   <p class="text-primary-100 leading-relaxed mb-6">
-                    Developed the next generation Electronic Voting System (SVE5) for UNAM's democratic processes. 
-                    Handled security-critical functionality ensuring transparency and reliability in university elections.
+                    {{ t.experience.unamDescription }}
                   </p>
                   
                   <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">Security Systems</span>
-                    <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">Database Design</span>
-                    <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">System Architecture</span>
+                    <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">{{ t.experience.skills.securitySystems }}</span>
+                    <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">{{ t.experience.skills.databaseDesign }}</span>
+                    <span class="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">{{ t.experience.skills.systemArchitecture }}</span>
                   </div>
                 </div>
               </div>
@@ -408,14 +402,14 @@
   <div class="container-max relative">
     <div class="text-center mb-16">
       <span class="inline-block px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-semibold mb-4 fade-in-up">
-        Technical expertise
+        {{ t.skills.technicalExpertise }}
       </span>
       <h2 class="text-4xl md:text-5xl font-bold text-primary-900 mb-6 fade-in-up delay-100">
-        Technical <span class="gradient-text">Skills</span>
+        {{ t.skills.title }} <span class="gradient-text">{{ t.skills.skills }}</span>
       </h2>
       <div class="w-24 h-1 bg-gradient-to-r from-accent-500 to-accent-400 mx-auto rounded-full fade-in-up delay-200"></div>
       <p class="text-lg text-primary-600 mt-6 max-w-2xl mx-auto fade-in-up delay-300">
-        A comprehensive toolkit of modern technologies and frameworks, constantly evolving with industry trends
+        {{ t.skills.description }}
       </p>
     </div>
     
@@ -429,8 +423,8 @@
               <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-primary-900 mb-2">Frontend</h3>
-          <p class="text-primary-600">User Interface & Experience</p>
+          <h3 class="text-2xl font-bold text-primary-900 mb-2">{{ t.skills.frontend }}</h3>
+          <p class="text-primary-600">{{ t.skills.frontendDesc }}</p>
         </div>
         
         <div class="space-y-4">
@@ -495,8 +489,8 @@
               <path fill-rule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zM8 5a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1zm5 11a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-primary-900 mb-2">Mobile</h3>
-          <p class="text-primary-600">Cross-platform Development</p>
+          <h3 class="text-2xl font-bold text-primary-900 mb-2">{{ t.skills.mobile }}</h3>
+          <p class="text-primary-600">{{ t.skills.mobileDesc }}</p>
         </div>
         
         <div class="space-y-4">
@@ -561,8 +555,8 @@
               <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-primary-900 mb-2">Backend</h3>
-          <p class="text-primary-600">Server & Database</p>
+          <h3 class="text-2xl font-bold text-primary-900 mb-2">{{ t.skills.backend }}</h3>
+          <p class="text-primary-600">{{ t.skills.backendDesc }}</p>
         </div>
         
         <div class="space-y-4">
@@ -622,16 +616,16 @@
     
     <!-- Additional Skills Tags -->
     <div class="text-center fade-in-up delay-600">
-      <h3 class="text-xl font-bold text-primary-900 mb-6">Additional Technologies & Tools</h3>
+      <h3 class="text-xl font-bold text-primary-900 mb-6">{{ t.skills.additionalTech.title }}</h3>
       <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-        <span class="px-4 py-2 bg-white rounded-full shadow-md border border-gray-200 text-primary-700 font-medium hover:shadow-lg transition-shadow">Git & GitHub</span>
-        <span class="px-4 py-2 bg-white rounded-full shadow-md border border-gray-200 text-primary-700 font-medium hover:shadow-lg transition-shadow">Docker</span>
-        <span class="px-4 py-2 bg-white rounded-full shadow-md border border-gray-200 text-primary-700 font-medium hover:shadow-lg transition-shadow">PostgreSQL</span>
-        <span class="px-4 py-2 bg-white rounded-full shadow-md border border-gray-200 text-primary-700 font-medium hover:shadow-lg transition-shadow">RESTful APIs</span>
-        <span class="px-4 py-2 bg-white rounded-full shadow-md border border-gray-200 text-primary-700 font-medium hover:shadow-lg transition-shadow">Agile/Scrum</span>
-        <span class="px-4 py-2 bg-white rounded-full shadow-md border border-gray-200 text-primary-700 font-medium hover:shadow-lg transition-shadow">UI/UX Design</span>
-        <span class="px-4 py-2 bg-white rounded-full shadow-md border border-gray-200 text-primary-700 font-medium hover:shadow-lg transition-shadow">TailwindCSS</span>
-        <span class="px-4 py-2 bg-white rounded-full shadow-md border border-gray-200 text-primary-700 font-medium hover:shadow-lg transition-shadow">Firebase</span>
+        <span class="px-4 py-2 bg-white rounded-full shadow-md border border-gray-200 text-primary-700 font-medium hover:shadow-lg transition-shadow">{{ t.skills.additionalTech.gitGithub }}</span>
+        <span class="px-4 py-2 bg-white rounded-full shadow-md border border-gray-200 text-primary-700 font-medium hover:shadow-lg transition-shadow">{{ t.skills.additionalTech.docker }}</span>
+        <span class="px-4 py-2 bg-white rounded-full shadow-md border border-gray-200 text-primary-700 font-medium hover:shadow-lg transition-shadow">{{ t.skills.additionalTech.postgresql }}</span>
+        <span class="px-4 py-2 bg-white rounded-full shadow-md border border-gray-200 text-primary-700 font-medium hover:shadow-lg transition-shadow">{{ t.skills.additionalTech.restfulAPIs }}</span>
+        <span class="px-4 py-2 bg-white rounded-full shadow-md border border-gray-200 text-primary-700 font-medium hover:shadow-lg transition-shadow">{{ t.skills.additionalTech.agileScrum }}</span>
+        <span class="px-4 py-2 bg-white rounded-full shadow-md border border-gray-200 text-primary-700 font-medium hover:shadow-lg transition-shadow">{{ t.skills.additionalTech.uiuxDesign }}</span>
+        <span class="px-4 py-2 bg-white rounded-full shadow-md border border-gray-200 text-primary-700 font-medium hover:shadow-lg transition-shadow">{{ t.skills.additionalTech.tailwindCSS }}</span>
+        <span class="px-4 py-2 bg-white rounded-full shadow-md border border-gray-200 text-primary-700 font-medium hover:shadow-lg transition-shadow">{{ t.skills.additionalTech.firebase }}</span>
       </div>
     </div>
   </div>
@@ -646,14 +640,14 @@
   <div class="container-max relative">
     <div class="text-center mb-16">
       <span class="inline-block px-4 py-2 bg-accent-500/20 text-accent-300 rounded-full text-sm font-semibold mb-4 fade-in-up">
-        Featured work
+        {{ t.projects.featuredWork }}
       </span>
       <h2 class="text-4xl md:text-5xl font-bold mb-6 fade-in-up delay-100">
-        Featured <span class="text-accent-300">Projects</span>
+        {{ t.projects.title }} <span class="text-accent-300">{{ t.projects.projects }}</span>
       </h2>
       <div class="w-24 h-1 bg-gradient-to-r from-accent-400 to-accent-300 mx-auto rounded-full fade-in-up delay-200"></div>
       <p class="text-lg text-primary-200 mt-6 max-w-2xl mx-auto fade-in-up delay-300">
-        A showcase of innovative solutions built with modern technologies and best practices
+        {{ t.projects.description }}
       </p>
     </div>
     
@@ -669,29 +663,29 @@
                 </svg>
               </div>
               <div>
-                <h3 class="text-3xl font-bold text-white mb-1">Darwin Platform</h3>
+                <h3 class="text-3xl font-bold text-white mb-1">{{ t.projects.darwinTitle }}</h3>
                 <span class="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-sm font-medium">
-                  Production Ready
+                  {{ t.projects.productionReady }}
                 </span>
               </div>
             </div>
             
             <p class="text-primary-100 leading-relaxed mb-6 text-lg">
-              Comprehensive loyalty & coupon management ecosystem featuring multi-platform mobile app, business dashboard, and admin panel with advanced geolocation services.
+              {{ t.projects.darwinDescription }}
             </p>
             
             <div class="space-y-4 mb-8">
               <div class="flex items-start">
                 <div class="w-2 h-2 bg-accent-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <span class="text-primary-200">Multi-platform mobile app with QR scanning, geofencing, and push notifications</span>
+                <span class="text-primary-200">{{ t.projects.darwinFeature1 }}</span>
               </div>
               <div class="flex items-start">
                 <div class="w-2 h-2 bg-accent-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <span class="text-primary-200">Business dashboard for coupon management and real-time analytics</span>
+                <span class="text-primary-200">{{ t.projects.darwinFeature2 }}</span>
               </div>
               <div class="flex items-start">
                 <div class="w-2 h-2 bg-accent-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <span class="text-primary-200">RESTful API with JWT authentication and Google Maps integration</span>
+                <span class="text-primary-200">{{ t.projects.darwinFeature3 }}</span>
               </div>
             </div>
             
@@ -713,8 +707,8 @@
                     <path fill-rule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zM8 5a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1zm5 11a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd"></path>
                   </svg>
                 </div>
-                <h4 class="text-lg font-semibold text-primary-200 mb-2">Mobile-First Design</h4>
-                <p class="text-primary-300 text-sm">Cross-platform compatibility</p>
+                <h4 class="text-lg font-semibold text-primary-200 mb-2">{{ t.projects.mobileFirstDesign }}</h4>
+                <p class="text-primary-300 text-sm">{{ t.projects.crossPlatform }}</p>
               </div>
             </div>
           </div>
@@ -733,15 +727,15 @@
             </svg>
           </div>
           <div>
-            <h3 class="text-xl font-bold text-white mb-1">Cryptography SCPI</h3>
+            <h3 class="text-xl font-bold text-white mb-1">{{ t.projects.cryptoTitle }}</h3>
             <span class="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full text-xs font-medium">
-              Security Focused
+              {{ t.projects.securityFocused }}
             </span>
           </div>
         </div>
         
         <p class="text-primary-200 leading-relaxed mb-6">
-          Full-stack cryptographic communication system implementing SCPI protocol for secure data transmission between instruments.
+          {{ t.projects.cryptoDescription }}
         </p>
         
         <div class="space-y-3 mb-6">
@@ -749,19 +743,19 @@
             <svg class="w-4 h-4 mr-2 text-accent-400" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            TypeScript frontend with secure command interface
+            {{ t.projects.cryptoFeature1 }}
           </div>
           <div class="flex items-center text-sm text-primary-300">
             <svg class="w-4 h-4 mr-2 text-accent-400" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            SCPI protocol implementation and standards
+            {{ t.projects.cryptoFeature2 }}
           </div>
           <div class="flex items-center text-sm text-primary-300">
             <svg class="w-4 h-4 mr-2 text-accent-400" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            Real-time instrument communication
+            {{ t.projects.cryptoFeature3 }}
           </div>
         </div>
         
@@ -1006,52 +1000,52 @@
 <!-- Contact Section -->
 <section id="contact" class="section-padding bg-primary-900 text-white">
   <div class="container-max">
-    <h2 class="text-4xl font-bold text-center mb-16">Let's Work Together</h2>
+    <h2 class="text-4xl font-bold text-center mb-16">{{ t.contact.title }}</h2>
     <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
       
       <div>
-        <h3 class="text-2xl font-bold mb-6">Get In Touch</h3>
+        <h3 class="text-2xl font-bold mb-6">{{ t.contact.getInTouch }}</h3>
         <p class="text-primary-200 mb-8">
-          Ready to bring your ideas to life? I'm available for freelance projects and professional opportunities.
+          {{ t.contact.description }}
         </p>
         
         <!-- Contact Form -->
         <form class="space-y-6 mb-8" (submit)="onSubmit($event)">
           <div>
-            <label for="name" class="block text-sm font-medium text-primary-200 mb-2">Name</label>
+            <label for="name" class="block text-sm font-medium text-primary-200 mb-2">{{ t.contact.nameLabel }}</label>
             <input type="text" id="name" name="name" required 
                    class="w-full px-4 py-3 bg-primary-800 border border-primary-700 rounded-lg text-white placeholder-primary-300 focus:border-accent-400 focus:ring-2 focus:ring-accent-400 focus:ring-opacity-20 transition-colors" 
-                   placeholder="Your full name">
+                   [placeholder]="t.contact.namePlaceholder">
           </div>
           
           <div>
-            <label for="email" class="block text-sm font-medium text-primary-200 mb-2">Email</label>
+            <label for="email" class="block text-sm font-medium text-primary-200 mb-2">{{ t.contact.emailLabel }}</label>
             <input type="email" id="email" name="email" required 
                    class="w-full px-4 py-3 bg-primary-800 border border-primary-700 rounded-lg text-white placeholder-primary-300 focus:border-accent-400 focus:ring-2 focus:ring-accent-400 focus:ring-opacity-20 transition-colors" 
-                   placeholder="your.email@example.com">
+                   [placeholder]="t.contact.emailPlaceholder">
           </div>
           
           <div>
-            <label for="subject" class="block text-sm font-medium text-primary-200 mb-2">Subject</label>
+            <label for="subject" class="block text-sm font-medium text-primary-200 mb-2">{{ t.contact.subjectLabel }}</label>
             <input type="text" id="subject" name="subject" required 
                    class="w-full px-4 py-3 bg-primary-800 border border-primary-700 rounded-lg text-white placeholder-primary-300 focus:border-accent-400 focus:ring-2 focus:ring-accent-400 focus:ring-opacity-20 transition-colors" 
-                   placeholder="Project inquiry, collaboration, etc.">
+                   [placeholder]="t.contact.subjectPlaceholder">
           </div>
           
           <div>
-            <label for="message" class="block text-sm font-medium text-primary-200 mb-2">Message</label>
+            <label for="message" class="block text-sm font-medium text-primary-200 mb-2">{{ t.contact.messageLabel }}</label>
             <textarea id="message" name="message" rows="4" required 
                       class="w-full px-4 py-3 bg-primary-800 border border-primary-700 rounded-lg text-white placeholder-primary-300 focus:border-accent-400 focus:ring-2 focus:ring-accent-400 focus:ring-opacity-20 transition-colors resize-none" 
-                      placeholder="Tell me about your project or how I can help you..."></textarea>
+                      [placeholder]="t.contact.messagePlaceholder"></textarea>
           </div>
           
           <button type="submit" class="w-full bg-accent-600 hover:bg-accent-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg">
-            Send Message
+            {{ t.contact.sendMessage }}
           </button>
         </form>
         
         <div class="border-t border-primary-800 pt-6">
-          <h4 class="text-lg font-semibold text-primary-200 mb-4">Or reach me directly:</h4>
+          <h4 class="text-lg font-semibold text-primary-200 mb-4">{{ t.contact.reachDirectly }}</h4>
           <div class="space-y-4">
             <div class="flex items-center">
               <svg class="w-6 h-6 mr-4 text-accent-400" fill="currentColor" viewBox="0 0 20 20">
@@ -1083,12 +1077,12 @@
       </div>
 
       <div>
-        <h3 class="text-2xl font-bold mb-6">Languages</h3>
+        <h3 class="text-2xl font-bold mb-6">{{ t.contact.languagesTitle }}</h3>
         <div class="space-y-4">
           <div>
             <div class="flex justify-between mb-2">
-              <span class="text-primary-200">English</span>
-              <span class="text-primary-200">Professional</span>
+              <span class="text-primary-200">{{ t.contact.englishLabel }}</span>
+              <span class="text-primary-200">{{ t.contact.englishLevel }}</span>
             </div>
             <div class="w-full bg-primary-800 rounded-full h-2">
               <div class="bg-accent-500 h-2 rounded-full" style="width: 85%"></div>
@@ -1097,8 +1091,8 @@
           
           <div>
             <div class="flex justify-between mb-2">
-              <span class="text-primary-200">Spanish</span>
-              <span class="text-primary-200">Native</span>
+              <span class="text-primary-200">{{ t.contact.spanishLabel }}</span>
+              <span class="text-primary-200">{{ t.contact.spanishLevel }}</span>
             </div>
             <div class="w-full bg-primary-800 rounded-full h-2">
               <div class="bg-accent-500 h-2 rounded-full" style="width: 100%"></div>
@@ -1122,10 +1116,16 @@
 </section>
 
 <!-- Footer -->
-<footer class="py-8 bg-primary-950 dark:bg-primary-950 text-primary-400 dark:text-primary-300 text-center transition-colors duration-300">
-  <div class="container-max">
-    <p>&copy; 2024 Diego Román Bruno Solís. All rights reserved.</p>
-    <p class="mt-2 text-sm">Computer Engineer | Full Stack Developer | Problem Solver</p>
+<footer class="py-12 bg-gradient-to-r from-gray-100 to-primary-100 border-t border-gray-300 text-center relative">
+  <!-- Subtle background pattern -->
+  <div class="absolute inset-0 bg-gradient-to-r from-accent-100/20 to-transparent"></div>
+  
+  <div class="container-max relative">
+    <p class="text-primary-900 font-medium">{{ t.footer.copyright }}</p>
+    <p class="mt-3 text-primary-600 text-sm">{{ t.footer.tagline }}</p>
+    
+    <!-- Subtle divider -->
+    <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-accent-500 to-transparent mx-auto mt-6"></div>
   </div>
 </footer>
 
