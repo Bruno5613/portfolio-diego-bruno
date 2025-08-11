@@ -1,5 +1,4 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from './services/translation.service';
@@ -7,13 +6,14 @@ import { Translation } from './interfaces/translation.interface';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'Diego Bruno - Full Stack Developer';
   isDarkMode = true;
+  isMobileMenuOpen = false;
   private observer!: IntersectionObserver;
 
   constructor(public translationService: TranslationService) {}
@@ -35,6 +35,14 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   get t(): Translation {
     return this.translationService.getTranslations();
+  }
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  closeMobileMenu(): void {
+    this.isMobileMenuOpen = false;
   }
 
 
@@ -74,23 +82,4 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
   }
 
-  onSubmit(event: Event) {
-    event.preventDefault();
-    const form = event.target as HTMLFormElement;
-    const formData = new FormData(form);
-    
-    const contactData = {
-      name: formData.get('name') as string,
-      email: formData.get('email') as string,
-      subject: formData.get('subject') as string,
-      message: formData.get('message') as string
-    };
-
-    // For now, just log the data and show an alert
-    console.log('Contact form submitted:', contactData);
-    alert('Thank you for your message! I will get back to you soon.');
-    
-    // Reset form
-    form.reset();
-  }
 }
