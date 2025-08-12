@@ -1,0 +1,179 @@
+<!-- Services Section -->
+<section class="section-padding bg-gradient-to-br from-white via-primary-50 to-accent-50 relative overflow-hidden">
+  <!-- Background Decoration -->
+  <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-accent-200/30 to-primary-200/30 rounded-full -translate-x-48 -translate-y-48 blur-3xl"></div>
+  <div class="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-br from-primary-200/30 to-accent-200/30 rounded-full translate-x-40 translate-y-40 blur-3xl"></div>
+  
+  <div class="container-max relative">
+    <div class="text-center mb-16">
+      <span class="inline-block px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-semibold mb-4 fade-in-up">
+        {{ t.services.title }}
+      </span>
+      <h2 class="text-4xl md:text-5xl font-bold text-primary-900 mb-6 fade-in-up delay-100">
+        {{ t.services.subtitle }} <span class="gradient-text">{{ t.services.offer }}</span>
+      </h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-accent-500 to-accent-400 mx-auto rounded-full fade-in-up delay-200"></div>
+      <p class="text-lg text-primary-600 mt-6 max-w-2xl mx-auto fade-in-up delay-300">
+        {{ t.services.description }}
+      </p>
+    </div>
+    
+    <!-- Featured Services -->
+    <div class="grid lg:grid-cols-2 gap-8 mb-12">
+      <!-- Web Development - Featured -->
+      <div class="bg-gradient-to-br from-accent-600 to-accent-700 rounded-3xl p-10 text-white hover-lift fade-in-up delay-300">
+        <div class="flex items-start justify-between mb-8">
+          <div>
+            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center text-white font-bold text-2xl mb-6">
+              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">{{ t.services.webDevelopmentTitle }}</h3>
+            <p class="text-accent-100 leading-relaxed mb-6">
+              {{ t.services.webDevelopmentDescription }}
+            </p>
+          </div>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="flex items-center">
+            <div class="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
+            <span class="text-accent-100">{{ t.services.webDevelopmentFeature1 }}</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
+            <span class="text-accent-100">{{ t.services.webDevelopmentFeature2 }}</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
+            <span class="text-accent-100">{{ t.services.webDevelopmentFeature3 }}</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
+            <span class="text-accent-100">{{ t.services.webDevelopmentFeature4 }}</span>
+          </div>
+        </div>
+        
+        <div class="mt-8 pt-6 border-t border-white/20">
+          <span class="bg-white/20 text-white px-3 py-1 rounded-full text-sm font-medium">
+            {{ t.services.mostPopular }}
+          </span>
+        </div>
+      </div>
+      
+      <!-- Mobile Development - Featured -->
+      <div class="bg-gradient-to-br from-primary-600 to-primary-700 rounded-3xl p-10 text-white hover-lift fade-in-up delay-400">
+        <div class="flex items-start justify-between mb-8">
+          <div>
+            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center text-white font-bold text-2xl mb-6">
+              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zM8 5a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1zm5 11a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">{{ t.services.mobileDevelopmentTitle }}</h3>
+            <p class="text-primary-100 leading-relaxed mb-6">
+              {{ t.services.mobileDevelopmentDescription }}
+            </p>
+          </div>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="flex items-center">
+            <div class="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
+            <span class="text-primary-100">{{ t.services.mobileDevelopmentFeature1 }}</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
+            <span class="text-primary-100">{{ t.services.mobileDevelopmentFeature2 }}</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
+            <span class="text-primary-100">{{ t.services.mobileDevelopmentFeature3 }}</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
+            <span class="text-primary-100">{{ t.services.mobileDevelopmentFeature4 }}</span>
+          </div>
+        </div>
+        
+        <div class="mt-8 pt-6 border-t border-white/20">
+          <span class="bg-white/20 text-white px-3 py-1 rounded-full text-sm font-medium">
+            {{ t.services.crossPlatform }}
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Additional Services Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Full Stack Solutions -->
+      <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover-lift fade-in-up delay-500">
+        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center text-white font-bold text-lg mb-6">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-primary-900 mb-3">{{ t.services.fullStackTitle }}</h3>
+        <p class="text-primary-600 text-sm leading-relaxed">
+          {{ t.services.fullStackDescription }}
+        </p>
+      </div>
+      
+      <!-- System Integration -->
+      <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover-lift fade-in-up delay-600">
+        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold text-lg mb-6">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-primary-900 mb-3">{{ t.services.systemIntegrationTitle }}</h3>
+        <p class="text-primary-600 text-sm leading-relaxed">
+          {{ t.services.systemIntegrationDescription }}
+        </p>
+      </div>
+      
+      <!-- UI/UX Implementation -->
+      <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover-lift fade-in-up delay-700">
+        <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center text-white font-bold text-lg mb-6">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-primary-900 mb-3">{{ t.services.uiuxTitle }}</h3>
+        <p class="text-primary-600 text-sm leading-relaxed">
+          {{ t.services.uiuxDescription }}
+        </p>
+      </div>
+      
+      <!-- Technical Consulting -->
+      <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover-lift fade-in-up delay-800">
+        <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center text-white font-bold text-lg mb-6">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-primary-900 mb-3">{{ t.services.consultingTitle }}</h3>
+        <p class="text-primary-600 text-sm leading-relaxed">
+          {{ t.services.consultingDescription }}
+        </p>
+      </div>
+    </div>
+    
+    <!-- Call to Action -->
+    <div class="text-center mt-16 fade-in-up delay-900">
+      <div class="bg-gradient-to-r from-accent-600 to-primary-600 rounded-2xl p-8 text-white">
+        <h3 class="text-2xl font-bold mb-4">{{ t.services.ctaTitle }}</h3>
+        <p class="text-lg text-white/90 mb-6 max-w-2xl mx-auto">
+          {{ t.services.ctaDescription }}
+        </p>
+        <a href="#contact" class="inline-flex items-center bg-white text-accent-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-colors group">
+          {{ t.services.ctaButton }}
+          <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

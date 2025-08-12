@@ -4,17 +4,25 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from './services/translation.service';
 import { Translation } from './interfaces/translation.interface';
+import { HeaderComponent } from './components/header/header.component';
+import { HeroComponent } from './components/hero/hero.component';
+import { AboutComponent } from './components/about/about.component';
+import { ExperienceComponent } from './components/experience/experience.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { ServicesComponent } from './components/services/services.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, HeaderComponent, HeroComponent, AboutComponent, ExperienceComponent, SkillsComponent, ProjectsComponent, ServicesComponent, ContactComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'Diego Bruno - Full Stack Developer';
   isDarkMode = true;
-  isMobileMenuOpen = false;
   private observer!: IntersectionObserver;
 
   constructor(
@@ -31,25 +39,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
   }
 
-  get currentLanguage(): 'es' | 'en' | 'de' {
-    return this.translationService.getCurrentLanguage();
-  }
-
-  changeLanguage(language: string | 'es' | 'en' | 'de') {
-    const lang = language as 'es' | 'en' | 'de';
-    this.translationService.setLanguage(lang);
-  }
-
   get t(): Translation {
     return this.translationService.getTranslations();
-  }
-
-  toggleMobileMenu(): void {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
-  }
-
-  closeMobileMenu(): void {
-    this.isMobileMenuOpen = false;
   }
 
 
