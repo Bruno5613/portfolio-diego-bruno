@@ -24,7 +24,7 @@
           <!-- Floating Elements - Ajustados para móvil -->
           <div class="absolute -top-2 md:-top-4 -right-2 md:-right-4 w-12 h-12 md:w-16 md:h-16 bg-accent-500 rounded-xl flex items-center justify-center text-white font-bold text-base md:text-lg float delay-1000">
             <svg class="w-6 h-6 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M11 3a1 1 0 10-2 0v1a1 1 0 10-2 0V3a3 3 0 106 0v1a1 1 0 10-2 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 00-1.414-1.414l-.707.707a3 3 0 104.242 4.242l.707-.707a1 1 0 00-1.414-1.414l-.707.707a1 1 0 00-1.414-1.414l.707-.707z"></path>
+              <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
             </svg>
           </div>
           <div class="absolute -bottom-3 md:-bottom-6 -left-3 md:-left-6 w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl flex items-center justify-center text-white font-bold text-lg md:text-xl float delay-2000">
@@ -88,7 +88,7 @@
     </div>
     
     <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 fade-in-up delay-700">
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 fade-in-up delay-700 hidden md:block">
       <div class="flex flex-col items-center text-primary-300">
         <span class="text-sm mb-2">{{ t.hero.scrollToExplore }}</span>
         <div class="w-6 h-10 border-2 border-primary-300 rounded-full flex justify-center">
