@@ -12,6 +12,12 @@ export interface Product {
     hero: string;
     gallery: string[];
     preview: string;
+    carousel?: {
+      type: 'image' | 'video';
+      src: string;
+      alt: string;
+      title: string;
+    }[];
   };
   links: {
     demo?: string;
@@ -28,6 +34,18 @@ export interface Product {
     compatibility: string[];
     includes: string[];
   };
+  themes?: {
+    name: string;
+    description: string;
+    image: string;
+    style: 'light' | 'dark';
+  }[];
+  perfectFor?: string[];
+  whatYouGet?: {
+    title: string;
+    items: string[];
+  }[];
+  keyHighlights?: string[];
   isNew?: boolean;
   isFeatured?: boolean;
   discount?: number;

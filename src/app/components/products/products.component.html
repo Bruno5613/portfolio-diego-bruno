@@ -1,12 +1,13 @@
-<!-- Professional Sales Page - Gumroad/Creative Market Style -->
-<div class="min-h-screen bg-white dark:bg-gray-900">
+<!-- Professional Sales Page - Creative Market Style -->
+<div class="min-h-screen bg-white dark:bg-gray-900" *ngFor="let product of products; trackBy: trackByProduct">
+  
   <!-- Navigation Breadcrumb -->
   <div class="bg-gray-50 dark:bg-gray-800/50 border-b border-gray-200 dark:border-gray-700 pt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <nav class="text-sm">
         <span class="text-gray-500 dark:text-gray-400">Products</span>
         <span class="text-gray-400 mx-2">/</span>
-        <span class="text-gray-900 dark:text-white font-medium">SaaS Landing Page Starter Pack</span>
+        <span class="text-gray-900 dark:text-white font-medium">{{ product.title }}</span>
       </nav>
     </div>
   </div>
@@ -20,318 +21,341 @@
         <!-- Product Header -->
         <div class="mb-8">
           <div class="flex items-center gap-3 mb-4">
-            <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">Template</span>
-            <span class="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">New</span>
-            <span class="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200 px-3 py-1 rounded-full text-sm font-medium">Best Seller</span>
+            <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">{{ product.category }}</span>
+            <span *ngIf="product.isNew" class="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">New</span>
+            <span *ngIf="product.isFeatured" class="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200 px-3 py-1 rounded-full text-sm font-medium">Best Seller</span>
+            <span *ngIf="product.discount" class="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 px-3 py-1 rounded-full text-sm font-medium">{{ product.discount }}% OFF</span>
           </div>
           
           <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            SaaS Landing Page Starter Pack
+            {{ product.title }}
           </h1>
           
           <p class="text-xl text-gray-600 dark:text-gray-300 mb-6">
-            11 Professional SaaS Landing Page Templates • Built with Tailwind CSS • Light & Dark Mode • Mobile-First Design
+            {{ product.shortDescription }}
           </p>
 
           <!-- Stats -->
           <div class="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-400">
-            <div class="flex items-center gap-1">
+            <div class="flex items-center gap-1" *ngIf="product.stats?.rating">
               <div class="flex text-yellow-400">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                </svg>
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                </svg>
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                </svg>
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                </svg>
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <svg *ngFor="let star of [1,2,3,4,5]" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                 </svg>
               </div>
-              <span class="ml-1">4.9 (25 reviews)</span>
+              <span class="ml-1">{{ product.stats.rating }} ({{ product.stats.reviews }} reviews)</span>
             </div>
+            <span *ngIf="product.stats?.downloads">•</span>
+            <span *ngIf="product.stats?.downloads">{{ product.stats.downloads }}+ downloads</span>
             <span>•</span>
-            <span>150+ downloads</span>
-            <span>•</span>
-            <span>Updated recently</span>
+            <span>Built by Computer Engineer</span>
           </div>
         </div>
 
-        <!-- Hero Image -->
-        <div class="mb-8">
-          <div class="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 text-center">
-            <img src="file%20cover%20-%201.png" 
-                 alt="SaaS Landing Page Starter Pack Preview" 
-                 class="w-full max-w-3xl mx-auto rounded-xl shadow-2xl"
-                 loading="lazy" />
+        <!-- Interactive Carousel -->
+        <div class="mb-8" *ngIf="product.images.carousel">
+          <div class="relative max-w-5xl mx-auto">
+            
+            <!-- Carousel Content -->
+            <div class="relative overflow-hidden rounded-lg aspect-video">
+              
+              <!-- Slides -->
+              <div class="relative h-full">
+                <div *ngFor="let slide of product.images.carousel; let i = index" 
+                     class="absolute inset-0 transition-all duration-500 ease-in-out"
+                     [class.opacity-100]="i === currentSlide"
+                     [class.opacity-0]="i !== currentSlide">
+                  
+                  <!-- Image Slide -->
+                  <div *ngIf="slide.type === 'image'" class="h-full">
+                    <img [src]="slide.src" 
+                         [alt]="slide.alt" 
+                         class="w-full h-full object-cover"
+                         loading="lazy" />
+                  </div>
+                  
+                  <!-- Video Slide -->
+                  <div *ngIf="slide.type === 'video'" class="h-full">
+                    <video [src]="slide.src" 
+                           class="w-full h-full object-cover"
+                           autoplay 
+                           muted 
+                           loop 
+                           playsinline
+                           [attr.aria-label]="slide.alt">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  
+                </div>
+              </div>
+
+              <!-- Navigation Arrows -->
+              <button (click)="prevSlide(product)" 
+                      class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-all duration-200">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+              </button>
+              
+              <button (click)="nextSlide(product)" 
+                      class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-all duration-200">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </button>
+
+            </div>
+
+            <!-- Slide Indicators -->
+            <div class="flex justify-center mt-4 space-x-2">
+              <button *ngFor="let slide of product.images.carousel; let i = index"
+                      (click)="goToSlide(i)"
+                      class="w-2 h-2 rounded-full transition-all duration-200"
+                      [class.bg-blue-600]="i === currentSlide"
+                      [class.bg-gray-400]="i !== currentSlide"
+                      [attr.aria-label]="'Go to slide ' + (i + 1)">
+              </button>
+            </div>
+
           </div>
         </div>
 
-        <!-- Product Gallery -->
+        <!-- Product Overview -->
         <div class="mb-12">
-          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Preview Gallery</h2>
+          <div class="prose prose-lg max-w-none dark:prose-invert">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Complete SaaS Landing Page System</h2>
+            <p class="text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+              {{ product.description }}
+            </p>
+          </div>
+        </div>
+
+        <!-- Package Contents -->
+        <div class="mb-12" *ngIf="product.whatYouGet">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Package Contents</h2>
+          
+          <div class="grid lg:grid-cols-3 gap-6">
+            <div *ngFor="let section of product.whatYouGet" class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">{{ section.title }}</h3>
+              <ul class="space-y-2">
+                <li *ngFor="let item of section.items" class="flex items-start text-sm">
+                  <span class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <span class="text-gray-700 dark:text-gray-300">{{ item }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Theme Showcase Infinite Carousel -->
+        <div class="mb-16" *ngIf="product.themes">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">All 11 Professional Themes</h2>
+          <p class="text-lg text-gray-600 dark:text-gray-400 text-center mb-10">Each theme includes Light + Dark mode variations</p>
+          
+          <div class="relative max-w-6xl mx-auto" 
+               (mouseenter)="pauseAutoScroll()" 
+               (mouseleave)="resumeAutoScroll()">
+            
+            <!-- Carousel Container -->
+            <div class="overflow-hidden rounded-2xl py-8 relative" style="z-index: 1;">
+              <div class="flex transition-transform duration-500 ease-in-out"
+                   [style.transform]="'translateX(-' + (currentUseCaseSlide * 33.333) + '%)'">
+                
+                <!-- Theme Cards -->
+                <div *ngFor="let theme of product.themes; let i = index" 
+                     [class]="getCenterCardClass(i)">
+                  
+                  <div [class]="getThemeCardClass(i)">
+                    
+                    <div [class]="getImageContainerClass(i)">
+                      <img [src]="theme.image" 
+                           [alt]="theme.name + ' - ' + theme.style" 
+                           class="w-full h-full object-cover"
+                           loading="lazy" />
+                      
+                      <!-- Overlay on hover -->
+                      <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span [class]="getOverlayTextClass(i)">{{ theme.description }}</span>
+                      </div>
+                    </div>
+                    
+                    <div [class]="getContentClass(i)">
+                      <div class="flex items-center justify-between mb-2">
+                        <h3 [class]="getTitleClass(i)">{{ theme.name }}</h3>
+                        <span [class]="getBadgeClass(i, theme.style)">
+                          {{ theme.style }}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+                
+              </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button (click)="prevUseCaseSlide()" 
+                    class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-800 text-gray-800 dark:text-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 z-10">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </button>
+            
+            <button (click)="nextUseCaseSlide()" 
+                    class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-800 text-gray-800 dark:text-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 z-10">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Perfect For -->
+        <div class="mb-16" *ngIf="product.perfectFor">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Perfect For</h2>
+          <div class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div *ngFor="let item of product.perfectFor" class="flex items-start p-4 rounded-lg bg-gray-50 dark:bg-gray-700">
+                <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <span class="text-gray-800 dark:text-gray-200 font-medium">{{ item }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div class="mb-16" *ngIf="product.keyHighlights">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Features</h2>
+          <div class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div *ngFor="let highlight of product.keyHighlights" class="flex items-start">
+                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <span class="text-gray-800 dark:text-gray-200">{{ highlight }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Information -->
+        <div class="mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Technical Information</h2>
           <div class="grid md:grid-cols-2 gap-6">
-            <div class="space-y-6">
-              <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-                <img src="Presentation.png" 
-                     alt="11 Themes Preview" 
-                     class="w-full rounded-lg shadow-lg"
-                     loading="lazy" />
-              </div>
-              <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-                <img src="themes/hero__modern-purple__dark.png" 
-                     alt="Modern Purple Dark Theme" 
-                     class="w-full rounded-lg shadow-lg"
-                     loading="lazy" />
+            <!-- Technology Stack -->
+            <div class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6 pb-3 border-b border-gray-200 dark:border-gray-700">
+                Technology Stack
+              </h3>
+              <div class="space-y-4">
+                <div *ngFor="let tech of product.specifications.technology" class="flex items-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                  <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                  <span class="text-gray-800 dark:text-gray-200 font-medium">{{ tech }}</span>
+                </div>
               </div>
             </div>
-            <div class="space-y-6">
-              <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-                <img src="themes/hero__professional-blue__light.png" 
-                     alt="Professional Blue Light Theme" 
-                     class="w-full rounded-lg shadow-lg"
-                     loading="lazy" />
-              </div>
-              <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-                <img src="themes/hero__growth-green__dark.png" 
-                     alt="Growth Green Dark Theme" 
-                     class="w-full rounded-lg shadow-lg"
-                     loading="lazy" />
+            
+            <!-- Compatibility -->
+            <div class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6 pb-3 border-b border-gray-200 dark:border-gray-700">
+                Compatibility
+              </h3>
+              <div class="space-y-4">
+                <div *ngFor="let compat of product.specifications.compatibility" class="flex items-center p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                  <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                  <span class="text-gray-800 dark:text-gray-200 font-medium">{{ compat }}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- What You Get -->
+        <!-- What's Included -->
         <div class="mb-12">
-          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">What You Get</h2>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">What's Included</h2>
           <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
-            <div class="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 class="font-semibold text-gray-900 dark:text-white mb-4">📁 Complete Package</h3>
-                <ul class="space-y-3 text-gray-600 dark:text-gray-300">
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    11 Complete HTML Templates
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    Source CSS Files (Tailwind)
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    Setup Documentation
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    Customization Guide
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    6 Months Technical Support
-                  </li>
-                </ul>
+            <div class="bg-gray-900 dark:bg-gray-700 rounded-lg p-6 mb-6 font-mono text-sm text-green-400">
+              <div>saas-landing-page-starter-pack/</div>
+              <div class="ml-2">├── templates/ (2 complete HTML pages)</div>
+              <div class="ml-2">├── components/ (12 modular components)</div>
+              <div class="ml-2">├── assets/ (CSS, JS, images, icons)</div>
+              <div class="ml-2">├── documentation/ (3 comprehensive guides)</div>
+              <div class="ml-2">├── package.json (build tools included)</div>
+              <div class="ml-2">└── README.md (quick start guide)</div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div *ngFor="let include of product.specifications.includes" class="flex items-start p-4 bg-white dark:bg-gray-700 rounded-lg">
+                <svg class="w-5 h-5 text-purple-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                </svg>
+                <span class="text-sm text-gray-700 dark:text-gray-300">{{ include }}</span>
               </div>
-              <div>
-                <h3 class="font-semibold text-gray-900 dark:text-white mb-4">🎨 Features</h3>
-                <ul class="space-y-3 text-gray-600 dark:text-gray-300">
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    Light & Dark Mode Toggle
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    100% Responsive Design
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    SEO Optimized
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    Fast Loading Performance
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    Modular Components
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Perfect For Section -->
-        <div class="mb-12">
-          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Perfect For</h2>
-          <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-xl p-6 text-center">
-              <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
-                🚀
-              </div>
-              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">SaaS Startups</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-300">Launch your SaaS product with professional landing pages</p>
-            </div>
-            <div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-xl p-6 text-center">
-              <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
-                💻
-              </div>
-              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Web Developers</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-300">Save development time with ready-to-use templates</p>
-            </div>
-            <div class="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl p-6 text-center">
-              <div class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
-                🎯
-              </div>
-              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Marketing Agencies</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-300">Deliver high-quality landing pages to clients</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- FAQ Section -->
-        <div class="mb-12">
-          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Frequently Asked Questions</h2>
-          <div class="space-y-4">
-            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Do I need coding knowledge to use these templates?</h3>
-              <p class="text-gray-600 dark:text-gray-300">Basic HTML/CSS knowledge is recommended, but each template comes with detailed documentation and customization guides.</p>
-            </div>
-            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Can I use these for commercial projects?</h3>
-              <p class="text-gray-600 dark:text-gray-300">Yes! You have full commercial rights to use these templates for unlimited personal and commercial projects.</p>
-            </div>
-            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-              <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Do you provide updates?</h3>
-              <p class="text-gray-600 dark:text-gray-300">Yes, you'll receive free lifetime updates including new themes, bug fixes, and improvements.</p>
             </div>
           </div>
         </div>
 
       </div>
-
+      
       <!-- Sticky Sidebar -->
       <div class="lg:col-span-1">
-        <div class="sticky top-24">
-          <!-- Purchase Card -->
+        <div class="sticky top-8" style="z-index: 10;">
           <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-lg mb-6">
-            
-            <!-- Price -->
-            <div class="mb-6">
-              <div class="flex items-baseline gap-3 mb-2">
-                <span class="text-3xl font-bold text-gray-900 dark:text-white">$29</span>
-                <span class="text-xl text-gray-500 line-through">$49</span>
-                <span class="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 px-2 py-1 rounded-full text-sm font-medium">40% OFF</span>
+            <!-- Pricing -->
+            <div class="text-center mb-6">
+              <div class="flex items-center justify-center gap-3 mb-2">
+                <span *ngIf="product.originalPrice" class="text-lg text-gray-500 dark:text-gray-400 line-through">{{ product.originalPrice }}</span>
+                <span class="text-3xl font-bold text-gray-900 dark:text-white">{{ product.price }}</span>
               </div>
-              <p class="text-sm text-gray-500 dark:text-gray-400">One-time payment • Lifetime access</p>
+              <div *ngIf="product.discount" class="text-sm text-red-600 dark:text-red-400 font-medium">
+                Save {{ product.discount }}% - Limited Time Offer!
+              </div>
             </div>
 
-            <!-- Purchase Buttons -->
-            <div class="space-y-3 mb-6">
-              <a href="https://diegobrunodev.gumroad.com/l/saas-landing-page-starter-pack" 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors flex items-center justify-center gap-2">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
-                </svg>
-                Buy Now - $29
-              </a>
-              <a href="https://saas-starter-demo.diego-bruno.dev" 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 class="w-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-semibold py-3 px-6 rounded-xl transition-colors flex items-center justify-center gap-2">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
-                  <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
-                </svg>
-                View Live Demo
-              </a>
-            </div>
+            <!-- Purchase Button -->
+            <a [href]="product.links.purchase" target="_blank" 
+               class="w-full bg-blue-600 text-white font-semibold py-4 px-6 rounded-lg hover:bg-blue-700 transition-colors text-center block text-lg mb-4">
+              Get Instant Access
+            </a>
 
             <!-- Guarantees -->
-            <div class="space-y-3 text-sm text-gray-600 dark:text-gray-300">
-              <div class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <div class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+              <div class="flex items-center">
+                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                <span>Instant download after purchase</span>
+                Instant download after purchase
               </div>
-              <div class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <div class="flex items-center">
+                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                <span>6 months support included</span>
+                30-day money-back guarantee
               </div>
-              <div class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <div class="flex items-center">
+                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                <span>Commercial use license</span>
+                Lifetime updates included
               </div>
-              <div class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <div class="flex items-center">
+                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                <span>Lifetime free updates</span>
+                6 months technical support
               </div>
             </div>
           </div>
 
-          <!-- Technical Specs -->
-          <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6">
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-4">Technical Specifications</h3>
-            <div class="space-y-3 text-sm">
-              <div class="flex justify-between">
-                <span class="text-gray-600 dark:text-gray-300">File Format</span>
-                <span class="font-medium text-gray-900 dark:text-white">HTML, CSS</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-gray-600 dark:text-gray-300">Framework</span>
-                <span class="font-medium text-gray-900 dark:text-white">Tailwind CSS</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-gray-600 dark:text-gray-300">Themes</span>
-                <span class="font-medium text-gray-900 dark:text-white">11</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-gray-600 dark:text-gray-300">Mobile</span>
-                <span class="font-medium text-gray-900 dark:text-white">Responsive</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-gray-600 dark:text-gray-300">Browser Support</span>
-                <span class="font-medium text-gray-900 dark:text-white">All Modern</span>
-              </div>
-            </div>
+          <!-- Live Demo -->
+          <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+            <a [href]="product.links.demo" target="_blank" 
+               class="w-full bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white font-medium py-3 px-6 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors text-center block">
+              Live Demo
+            </a>
           </div>
         </div>
       </div>
-
+      
     </div>
   </div>
 </div>
