@@ -28,27 +28,16 @@
           </div>
           
           <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            {{ product.title }}
+            {{ t.products.saasTemplate.title }}
           </h1>
           
           <p class="text-xl text-gray-600 dark:text-gray-300 mb-6">
-            {{ product.shortDescription }}
+            {{ t.products.saasTemplate.shortDescription }}
           </p>
 
           <!-- Stats -->
           <div class="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-400">
-            <div class="flex items-center gap-1" *ngIf="product.stats?.rating">
-              <div class="flex text-yellow-400">
-                <svg *ngFor="let star of [1,2,3,4,5]" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                </svg>
-              </div>
-              <span class="ml-1">{{ product.stats.rating }} ({{ product.stats.reviews }} reviews)</span>
-            </div>
-            <span *ngIf="product.stats?.downloads">•</span>
-            <span *ngIf="product.stats?.downloads">{{ product.stats.downloads }}+ downloads</span>
-            <span>•</span>
-            <span>Built by Computer Engineer</span>
+            <span>{{ t.products.saasTemplate.builtBy }}</span>
           </div>
         </div>
 
@@ -124,16 +113,16 @@
         <!-- Product Overview -->
         <div class="mb-12">
           <div class="prose prose-lg max-w-none dark:prose-invert">
-            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Complete SaaS Landing Page System</h2>
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">{{ t.products.saasTemplate.overviewTitle }}</h2>
             <p class="text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-              {{ product.description }}
+              {{ t.products.saasTemplate.description }}
             </p>
           </div>
         </div>
 
         <!-- Package Contents -->
         <div class="mb-12" *ngIf="product.whatYouGet">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Package Contents</h2>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{{ t.products.saasTemplate.packageContentsTitle }}</h2>
           
           <div class="grid lg:grid-cols-3 gap-6">
             <div *ngFor="let section of product.whatYouGet" class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
@@ -150,8 +139,8 @@
 
         <!-- Theme Showcase Infinite Carousel -->
         <div class="mb-16" *ngIf="product.themes">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">All 11 Professional Themes</h2>
-          <p class="text-lg text-gray-600 dark:text-gray-400 text-center mb-10">Each theme includes Light + Dark mode variations</p>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">{{ t.products.saasTemplate.themesTitle }}</h2>
+          <p class="text-lg text-gray-600 dark:text-gray-400 text-center mb-10">{{ t.products.saasTemplate.themesSubtitle }}</p>
           
           <div class="relative max-w-6xl mx-auto" 
                (mouseenter)="pauseAutoScroll()" 
@@ -214,39 +203,95 @@
 
         <!-- Perfect For -->
         <div class="mb-16" *ngIf="product.perfectFor">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Perfect For</h2>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{{ t.products.saasTemplate.useCasesTitle }}</h2>
           <div class="space-y-3">
-            <div *ngFor="let item of product.perfectFor" class="flex items-center">
+            <div class="flex items-center">
               <div class="w-2 h-2 bg-blue-500 rounded-full mr-4 flex-shrink-0"></div>
-              <span class="text-lg text-gray-700 dark:text-gray-300">{{ item }}</span>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.useCase1 }}</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-blue-500 rounded-full mr-4 flex-shrink-0"></div>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.useCase2 }}</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-blue-500 rounded-full mr-4 flex-shrink-0"></div>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.useCase3 }}</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-blue-500 rounded-full mr-4 flex-shrink-0"></div>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.useCase4 }}</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-blue-500 rounded-full mr-4 flex-shrink-0"></div>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.useCase5 }}</span>
             </div>
           </div>
         </div>
 
         <!-- Features -->
         <div class="mb-16" *ngIf="product.keyHighlights">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Features</h2>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{{ t.products.saasTemplate.featuresTitle }}</h2>
           <div class="space-y-3">
-            <div *ngFor="let highlight of product.keyHighlights" class="flex items-center">
+            <div class="flex items-center">
               <div class="w-2 h-2 bg-green-500 rounded-full mr-4 flex-shrink-0"></div>
-              <span class="text-lg text-gray-700 dark:text-gray-300">{{ highlight }}</span>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.feature1 }}</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-green-500 rounded-full mr-4 flex-shrink-0"></div>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.feature2 }}</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-green-500 rounded-full mr-4 flex-shrink-0"></div>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.feature3 }}</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-green-500 rounded-full mr-4 flex-shrink-0"></div>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.feature4 }}</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-green-500 rounded-full mr-4 flex-shrink-0"></div>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.feature5 }}</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-green-500 rounded-full mr-4 flex-shrink-0"></div>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.feature6 }}</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-green-500 rounded-full mr-4 flex-shrink-0"></div>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.feature7 }}</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-green-500 rounded-full mr-4 flex-shrink-0"></div>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.feature8 }}</span>
             </div>
           </div>
         </div>
 
         <!-- Technical Information -->
         <div class="mb-16">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Technical Information</h2>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{{ t.products.saasTemplate.technicalInfoTitle }}</h2>
           <div class="grid md:grid-cols-2 gap-6">
             <!-- Technology Stack -->
             <div class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
               <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6 pb-3 border-b border-gray-200 dark:border-gray-700">
-                Technology Stack
+                {{ t.products.saasTemplate.technologyTitle }}
               </h3>
               <div class="space-y-4">
-                <div *ngFor="let tech of product.specifications.technology" class="flex items-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                <div class="flex items-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
                   <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                  <span class="text-gray-800 dark:text-gray-200 font-medium">{{ tech }}</span>
+                  <span class="text-gray-800 dark:text-gray-200 font-medium">{{ t.products.saasTemplate.tech1 }}</span>
+                </div>
+                <div class="flex items-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                  <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                  <span class="text-gray-800 dark:text-gray-200 font-medium">{{ t.products.saasTemplate.tech2 }}</span>
+                </div>
+                <div class="flex items-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                  <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                  <span class="text-gray-800 dark:text-gray-200 font-medium">{{ t.products.saasTemplate.tech3 }}</span>
+                </div>
+                <div class="flex items-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                  <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                  <span class="text-gray-800 dark:text-gray-200 font-medium">{{ t.products.saasTemplate.tech4 }}</span>
                 </div>
               </div>
             </div>
@@ -254,12 +299,24 @@
             <!-- Compatibility -->
             <div class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
               <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6 pb-3 border-b border-gray-200 dark:border-gray-700">
-                Compatibility
+                {{ t.products.saasTemplate.compatibilityTitle }}
               </h3>
               <div class="space-y-4">
-                <div *ngFor="let compat of product.specifications.compatibility" class="flex items-center p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                <div class="flex items-center p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
                   <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                  <span class="text-gray-800 dark:text-gray-200 font-medium">{{ compat }}</span>
+                  <span class="text-gray-800 dark:text-gray-200 font-medium">{{ t.products.saasTemplate.compat1 }}</span>
+                </div>
+                <div class="flex items-center p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                  <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                  <span class="text-gray-800 dark:text-gray-200 font-medium">{{ t.products.saasTemplate.compat2 }}</span>
+                </div>
+                <div class="flex items-center p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                  <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                  <span class="text-gray-800 dark:text-gray-200 font-medium">{{ t.products.saasTemplate.compat3 }}</span>
+                </div>
+                <div class="flex items-center p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                  <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                  <span class="text-gray-800 dark:text-gray-200 font-medium">{{ t.products.saasTemplate.compat4 }}</span>
                 </div>
               </div>
             </div>
@@ -268,7 +325,7 @@
 
         <!-- What's Included -->
         <div class="mb-12">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">What's Included</h2>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">{{ t.products.saasTemplate.whatsIncludedTitle }}</h2>
           <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
             <div class="bg-gray-900 dark:bg-gray-700 rounded-lg p-6 mb-6 font-mono text-sm text-green-400">
               <div>saas-landing-page-starter-pack/</div>
@@ -280,9 +337,57 @@
               <div class="ml-2">└── README.md (quick start guide)</div>
             </div>
             <div class="space-y-2">
-              <div *ngFor="let include of product.specifications.includes" class="flex items-center py-2">
+              <div class="flex items-center py-2">
                 <div class="w-2 h-2 bg-purple-500 rounded-full mr-4 flex-shrink-0"></div>
-                <span class="text-gray-700 dark:text-gray-300">{{ include }}</span>
+                <span class="text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.include1 }}</span>
+              </div>
+              <div class="flex items-center py-2">
+                <div class="w-2 h-2 bg-purple-500 rounded-full mr-4 flex-shrink-0"></div>
+                <span class="text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.include2 }}</span>
+              </div>
+              <div class="flex items-center py-2">
+                <div class="w-2 h-2 bg-purple-500 rounded-full mr-4 flex-shrink-0"></div>
+                <span class="text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.include3 }}</span>
+              </div>
+              <div class="flex items-center py-2">
+                <div class="w-2 h-2 bg-purple-500 rounded-full mr-4 flex-shrink-0"></div>
+                <span class="text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.include4 }}</span>
+              </div>
+              <div class="flex items-center py-2">
+                <div class="w-2 h-2 bg-purple-500 rounded-full mr-4 flex-shrink-0"></div>
+                <span class="text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.include5 }}</span>
+              </div>
+              <div class="flex items-center py-2">
+                <div class="w-2 h-2 bg-purple-500 rounded-full mr-4 flex-shrink-0"></div>
+                <span class="text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.include6 }}</span>
+              </div>
+              <div class="flex items-center py-2">
+                <div class="w-2 h-2 bg-purple-500 rounded-full mr-4 flex-shrink-0"></div>
+                <span class="text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.include7 }}</span>
+              </div>
+              <div class="flex items-center py-2">
+                <div class="w-2 h-2 bg-purple-500 rounded-full mr-4 flex-shrink-0"></div>
+                <span class="text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.include8 }}</span>
+              </div>
+              <div class="flex items-center py-2">
+                <div class="w-2 h-2 bg-purple-500 rounded-full mr-4 flex-shrink-0"></div>
+                <span class="text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.include9 }}</span>
+              </div>
+              <div class="flex items-center py-2">
+                <div class="w-2 h-2 bg-purple-500 rounded-full mr-4 flex-shrink-0"></div>
+                <span class="text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.include10 }}</span>
+              </div>
+              <div class="flex items-center py-2">
+                <div class="w-2 h-2 bg-purple-500 rounded-full mr-4 flex-shrink-0"></div>
+                <span class="text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.include11 }}</span>
+              </div>
+              <div class="flex items-center py-2">
+                <div class="w-2 h-2 bg-purple-500 rounded-full mr-4 flex-shrink-0"></div>
+                <span class="text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.include12 }}</span>
+              </div>
+              <div class="flex items-center py-2">
+                <div class="w-2 h-2 bg-purple-500 rounded-full mr-4 flex-shrink-0"></div>
+                <span class="text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.include13 }}</span>
               </div>
             </div>
           </div>
@@ -290,46 +395,46 @@
 
         <!-- Bonus Features -->
         <div class="mb-16">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Bonus Features</h2>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{{ t.products.saasTemplate.bonusFeaturesTitle }}</h2>
           <div class="space-y-3">
             <div class="flex items-center">
               <div class="w-2 h-2 bg-orange-500 rounded-full mr-4 flex-shrink-0"></div>
-              <span class="text-lg text-gray-700 dark:text-gray-300">Smart Chat Bot (demo) - Interactive widget with theme awareness</span>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.bonusFeature1 }}</span>
             </div>
             <div class="flex items-center">
               <div class="w-2 h-2 bg-orange-500 rounded-full mr-4 flex-shrink-0"></div>
-              <span class="text-lg text-gray-700 dark:text-gray-300">Scroll Animations - Smooth reveal effects</span>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.bonusFeature2 }}</span>
             </div>
             <div class="flex items-center">
               <div class="w-2 h-2 bg-orange-500 rounded-full mr-4 flex-shrink-0"></div>
-              <span class="text-lg text-gray-700 dark:text-gray-300">Analytics Ready - Easy integration with GA4, tracking events</span>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.bonusFeature3 }}</span>
             </div>
             <div class="flex items-center">
               <div class="w-2 h-2 bg-orange-500 rounded-full mr-4 flex-shrink-0"></div>
-              <span class="text-lg text-gray-700 dark:text-gray-300">Form Ready - Netlify, Formspree, custom backend support</span>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.bonusFeature4 }}</span>
             </div>
           </div>
         </div>
 
         <!-- Why Choose This Pack -->
         <div class="mb-16">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Why Choose This Pack?</h2>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{{ t.products.saasTemplate.whyChooseTitle }}</h2>
           <div class="space-y-3">
             <div class="flex items-center">
               <div class="w-2 h-2 bg-indigo-500 rounded-full mr-4 flex-shrink-0"></div>
-              <span class="text-lg text-gray-700 dark:text-gray-300">Built by Expert - Computer Engineer with modern web development expertise</span>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.whyReason1 }}</span>
             </div>
             <div class="flex items-center">
               <div class="w-2 h-2 bg-indigo-500 rounded-full mr-4 flex-shrink-0"></div>
-              <span class="text-lg text-gray-700 dark:text-gray-300">Business Focused - Designed specifically for SaaS business models</span>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.whyReason2 }}</span>
             </div>
             <div class="flex items-center">
               <div class="w-2 h-2 bg-indigo-500 rounded-full mr-4 flex-shrink-0"></div>
-              <span class="text-lg text-gray-700 dark:text-gray-300">Future Proof - Uses current web standards and best practices</span>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.whyReason3 }}</span>
             </div>
             <div class="flex items-center">
               <div class="w-2 h-2 bg-indigo-500 rounded-full mr-4 flex-shrink-0"></div>
-              <span class="text-lg text-gray-700 dark:text-gray-300">Ongoing Value - Learn modern development patterns</span>
+              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.whyReason4 }}</span>
             </div>
           </div>
         </div>
@@ -337,10 +442,10 @@
         <!-- Call to Action -->
         <div class="mb-16">
           <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 text-center">
-            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Ready to transform your SaaS landing pages?</h2>
-            <p class="text-xl text-gray-600 dark:text-gray-400 mb-6">Get your starter pack now!</p>
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">{{ t.products.saasTemplate.ctaTitle }}</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-400 mb-6">{{ t.products.saasTemplate.ctaDescription }}</p>
             <a href="https://diegobrunodev.gumroad.com/l/saas-landing-page-starter-pack" target="_blank" class="inline-block bg-blue-600 text-white font-semibold text-lg px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors">
-              Get Instant Access - $29
+              {{ t.products.saasTemplate.ctaButton }}
             </a>
           </div>
         </div>
@@ -365,7 +470,7 @@
             <!-- Purchase Button -->
             <a [href]="product.links.purchase" target="_blank" 
                class="w-full bg-blue-600 text-white font-semibold py-4 px-6 rounded-lg hover:bg-blue-700 transition-colors text-center block text-lg mb-4">
-              Get Instant Access
+              {{ t.products.saasTemplate.getInstantAccess }}
             </a>
 
 
@@ -375,19 +480,19 @@
                 <svg class="w-4 h-4 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                <span>Instant download after purchase</span>
+                <span>{{ t.products.saasTemplate.guaranteeInstant }}</span>
               </div>
               <div class="flex items-center">
                 <svg class="w-4 h-4 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                <span>Lifetime updates included</span>
+                <span>{{ t.products.saasTemplate.guaranteeUpdates }}</span>
               </div>
               <div class="flex items-center">
                 <svg class="w-4 h-4 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                <span>Community support access</span>
+                <span>{{ t.products.saasTemplate.guaranteeSupport }}</span>
               </div>
             </div>
           </div>
@@ -396,7 +501,7 @@
           <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
             <a [href]="product.links.demo" target="_blank" 
                class="w-full bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white font-medium py-3 px-6 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors text-center block">
-              Live Demo
+              {{ t.products.saasTemplate.liveDemo }}
             </a>
           </div>
         </div>

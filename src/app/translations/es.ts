@@ -188,27 +188,104 @@ export const spanishTranslations: Translation = {
     // SaaS Template Specific
     saasTemplate: {
       title: 'SaaS Landing Page Starter Pack',
-      shortDescription: 'Pack profesional de plantillas para páginas de aterrizaje SaaS',
-      description: 'Pack completo de plantillas profesionales para páginas de aterrizaje SaaS con 11 temas únicos, arquitectura 100% Tailwind CSS y sistema de componentes modulares. Diseñado específicamente para maximizar conversiones y ofrecer una experiencia móvil perfecta.',
+      shortDescription: 'Pack profesional completo de plantillas para landing pages SaaS con 11 temas únicos, modo oscuro, y stack tecnológico moderno',
+      description: 'Transforma tu Negocio SaaS con Landing Pages Profesionales. Lanza tu SaaS con confianza usando este pack completo construido por un Ingeniero en Computación con años de experiencia creando páginas de alta conversión.',
       heroFeature: '11 temas profesionales con modo claro y oscuro incluidos',
-      feature1: '11 temas profesionales únicos (claro y oscuro)',
-      feature2: 'Arquitectura 100% Tailwind CSS',
-      feature3: 'Sistema de componentes modulares reutilizables',
-      feature4: 'Optimizado para conversión y móviles',
-      feature5: 'Código limpio y bien documentado',
-      feature6: 'Fácil personalización y mantenimiento',
-      includes1: '11 plantillas HTML completas',
-      includes2: 'Archivos CSS compilados y fuente',
-      includes3: 'Documentación completa de instalación',
-      includes4: 'Guía de personalización detallada',
-      includes5: 'Soporte técnico por 6 meses',
-      compatibility1: 'Todos los navegadores modernos',
-      compatibility2: 'Responsive en todos los dispositivos',
-      compatibility3: 'Compatible con frameworks populares',
-      perfectFor: 'Perfecto para:',
-      perfectFor1: 'Startups y emprendedores SaaS',
-      perfectFor2: 'Desarrolladores web freelance',
-      perfectFor3: 'Agencias de marketing digital'
+      
+      // Overview section
+      overviewTitle: 'Sistema Completo de Landing Page SaaS',
+      
+      // Package Contents
+      packageContentsTitle: 'Contenido del Paquete',
+      packageSection1: '11 Temas Profesionales',
+      packageSection2: '2 Plantillas Completas',
+      packageSection3: 'Stack Tecnológico Moderno',
+      
+      // Theme showcase
+      themesTitle: 'Los 11 Temas Profesionales',
+      themesSubtitle: 'Cada tema incluye variaciones de Modo Claro + Oscuro',
+      
+      // Use Cases
+      useCasesTitle: 'Casos de Uso',
+      useCase1: 'Startups SaaS lanzando nuevos productos',
+      useCase2: 'Empresas de software B2B necesitando páginas profesionales',
+      useCase3: 'Agencias digitales entregando proyectos de clientes',
+      useCase4: 'Emprendedores construyendo negocios de software',
+      useCase5: 'Desarrolladores queriendo plantillas modernas y mantenibles',
+      
+      // Features
+      featuresTitle: 'Características',
+      feature1: 'Configuración Rápida - npm install, personalizar, desplegar',
+      feature2: 'Cambio de Temas - Los usuarios pueden cambiar entre 11 temas',
+      feature3: 'Optimizado para Móviles - Perfecto en todos los dispositivos',
+      feature4: 'Construido con estándares web modernos',
+      feature5: 'Documentación Completa',
+      feature6: 'Optimizado para Conversión - Basado en análisis de páginas SaaS exitosas',
+      feature7: 'Construido por Experto - Ingeniero en Computación con experiencia en desarrollo web moderno',
+      feature8: 'A Prueba del Futuro - Usa estándares web actuales y mejores prácticas',
+      
+      // Bonus Features
+      bonusFeaturesTitle: 'Características Adicionales',
+      bonusFeature1: 'Smart Chat Bot (demo) - Widget interactivo con reconocimiento de temas',
+      bonusFeature2: 'Animaciones de Scroll - Efectos de revelación suaves',
+      bonusFeature3: 'Listo para Analytics - Fácil integración con GA4, eventos de seguimiento',
+      bonusFeature4: 'Listo para Formularios - Soporte para Netlify, Formspree, backend personalizado',
+      
+      // Why Choose This Pack
+      whyChooseTitle: '¿Por qué Elegir Este Pack?',
+      whyReason1: 'Construido por Experto - Ingeniero en Computación con experiencia en desarrollo web moderno',
+      whyReason2: 'Enfocado en Negocios - Diseñado específicamente para modelos de negocio SaaS',
+      whyReason3: 'A Prueba del Futuro - Usa estándares web actuales y mejores prácticas',
+      whyReason4: 'Valor Continuo - Aprende patrones de desarrollo modernos',
+      
+      // What's Included
+      whatsIncludedTitle: 'Qué Está Incluido',
+      include1: '2 Landing Pages Completas (Principal + Registro)',
+      include2: '11 Temas Profesionales con Modo Claro + Oscuro',
+      include3: '12 Componentes HTML Modulares',
+      include4: 'Arquitectura 100% Tailwind CSS',
+      include5: 'Cambiador de Temas JavaScript con localStorage',
+      include6: 'Documentación Completa (Configuración, Personalización, Componentes)',
+      include7: 'Herramientas de Construcción npm (dev/build/preview)',
+      include8: 'Bonus: Componente Smart Chat Bot',
+      include9: 'Animaciones de Scroll con Intersection Observer',
+      include10: 'Validación de Formularios con Accesibilidad',
+      include11: 'Estructura SEO (Meta Tags, Schema Markup)',
+      include12: 'Listo para Analytics (integración GA4)',
+      include13: 'Objetivo de Rendimiento Lighthouse 95+',
+      
+      // Technical specs
+      technologyTitle: 'Stack Tecnológico',
+      tech1: 'HTML5',
+      tech2: 'Tailwind CSS v3.4+',
+      tech3: 'JavaScript ES6+ Moderno',
+      tech4: 'Sistema de Construcción npm',
+      
+      compatibilityTitle: 'Compatibilidad',
+      compat1: 'Todos los navegadores modernos',
+      compat2: 'Diseño responsivo mobile-first',
+      compat3: 'Modo oscuro/claro',
+      compat4: 'Optimizado para SEO',
+      
+      // Guarantees
+      guaranteeInstant: 'Descarga instantánea después de la compra',
+      guaranteeUpdates: 'Actualizaciones de por vida incluidas',
+      guaranteeSupport: 'Acceso a soporte comunitario',
+      
+      // Call to Action
+      ctaTitle: '¿Listo para transformar tus landing pages SaaS?',
+      ctaDescription: '¡Obtén tu pack inicial ahora!',
+      ctaButton: 'Acceso Instantáneo - $29',
+      
+      // Built by
+      builtBy: 'Construido por Ingeniero en Computación',
+      
+      // Actions & Buttons
+      getInstantAccess: 'Acceso Instantáneo',
+      liveDemo: 'Demo en Vivo',
+      
+      // Technical section title
+      technicalInfoTitle: 'Información Técnica'
     },
     
     // CTA Section

@@ -188,27 +188,104 @@ export const germanTranslations: Translation = {
     // SaaS Template Specific
     saasTemplate: {
       title: 'SaaS Landing Page Starter Pack',
-      shortDescription: 'Professionelles SaaS Landing Page Template-Paket',
-      description: 'Vollständiges professionelles SaaS Landing Page Template-Paket mit 11 einzigartigen Themes, 100% Tailwind CSS Architektur und modularem Komponentensystem. Speziell entwickelt zur Maximierung von Konversionen und für perfekte mobile Erfahrung.',
+      shortDescription: 'Vollständiges professionelles SaaS Landing Page Template-Paket mit 11 einzigartigen Themes, Dark Mode und modernem Tech Stack',
+      description: 'Verwandeln Sie Ihr SaaS-Geschäft mit professionellen Landing Pages. Starten Sie Ihr SaaS selbstbewusst mit diesem vollständigen Starter-Pack, entwickelt von einem Informatikingenieur mit jahrelanger Erfahrung im Erstellen hochkonvertierender Seiten.',
       heroFeature: '11 professionelle Themes mit hellem und dunklem Modus enthalten',
-      feature1: '11 einzigartige professionelle Themes (hell & dunkel)',
-      feature2: '100% Tailwind CSS Architektur',
-      feature3: 'Wiederverwendbares modulares Komponentensystem',
-      feature4: 'Konversions-optimiert und Mobile-First',
-      feature5: 'Sauberer, gut dokumentierter Code',
-      feature6: 'Einfache Anpassung und Wartung',
-      includes1: '11 vollständige HTML-Vorlagen',
-      includes2: 'Kompilierte und Quell-CSS-Dateien',
-      includes3: 'Vollständige Installationsdokumentation',
-      includes4: 'Detaillierte Anpassungsanleitung',
-      includes5: '6-monatiger technischer Support',
-      compatibility1: 'Alle modernen Browser',
-      compatibility2: 'Responsive auf allen Geräten',
-      compatibility3: 'Kompatibel mit beliebten Frameworks',
-      perfectFor: 'Perfekt für:',
-      perfectFor1: 'SaaS-Startups und Unternehmer',
-      perfectFor2: 'Freiberufliche Webentwickler',
-      perfectFor3: 'Digital Marketing Agenturen'
+      
+      // Overview section
+      overviewTitle: 'Vollständiges SaaS Landing Page System',
+      
+      // Package Contents
+      packageContentsTitle: 'Paket-Inhalt',
+      packageSection1: '11 Professionelle Themes',
+      packageSection2: '2 Vollständige Templates',
+      packageSection3: 'Moderner Tech Stack',
+      
+      // Theme showcase
+      themesTitle: 'Alle 11 Professionellen Themes',
+      themesSubtitle: 'Jedes Theme beinhaltet Hell + Dunkel Modus Variationen',
+      
+      // Use Cases
+      useCasesTitle: 'Anwendungsfälle',
+      useCase1: 'SaaS-Startups, die neue Produkte lancieren',
+      useCase2: 'B2B-Software-Unternehmen, die professionelle Seiten benötigen',
+      useCase3: 'Digitale Agenturen, die Kundenprojekte abliefern',
+      useCase4: 'Unternehmer, die Software-Geschäfte aufbauen',
+      useCase5: 'Entwickler, die moderne, wartbare Templates wollen',
+      
+      // Features
+      featuresTitle: 'Funktionen',
+      feature1: 'Schnelle Einrichtung - npm install, anpassen, deployen',
+      feature2: 'Theme-Wechsel - Benutzer können zwischen 11 Themes wechseln',
+      feature3: 'Mobile-Optimiert - Perfekt auf allen Geräten',
+      feature4: 'Mit modernen Web-Standards gebaut',
+      feature5: 'Vollständige Dokumentation',
+      feature6: 'Konversions-Optimiert - Basierend auf Analyse erfolgreicher SaaS-Seiten',
+      feature7: 'Von Experte gebaut - Informatikingenieur mit moderner Web-Entwicklungserfahrung',
+      feature8: 'Zukunftssicher - Verwendet aktuelle Web-Standards und Best Practices',
+      
+      // Bonus Features
+      bonusFeaturesTitle: 'Bonus-Funktionen',
+      bonusFeature1: 'Smart Chat Bot (Demo) - Interaktives Widget mit Theme-Bewusstsein',
+      bonusFeature2: 'Scroll-Animationen - Sanfte Enthüllungseffekte',
+      bonusFeature3: 'Analytics-Bereit - Einfache Integration mit GA4, Tracking-Events',
+      bonusFeature4: 'Formular-Bereit - Netlify, Formspree, Custom Backend-Unterstützung',
+      
+      // Why Choose This Pack
+      whyChooseTitle: 'Warum Dieses Pack Wählen?',
+      whyReason1: 'Von Experte gebaut - Informatikingenieur mit moderner Web-Entwicklungserfahrung',
+      whyReason2: 'Business-Fokussiert - Speziell für SaaS-Geschäftsmodelle entwickelt',
+      whyReason3: 'Zukunftssicher - Verwendet aktuelle Web-Standards und Best Practices',
+      whyReason4: 'Dauerhafter Wert - Lernen Sie moderne Entwicklungsmuster',
+      
+      // What's Included
+      whatsIncludedTitle: 'Was Ist Enthalten',
+      include1: '2 Vollständige Landing Pages (Haupt + Anmeldung)',
+      include2: '11 Professionelle Themes mit Hell + Dunkel Modus',
+      include3: '12 Modulare HTML-Komponenten',
+      include4: '100% Tailwind CSS Architektur',
+      include5: 'JavaScript Theme-Wechsler mit localStorage',
+      include6: 'Vollständige Dokumentation (Setup, Anpassung, Komponenten)',
+      include7: 'npm Build-Tools (dev/build/preview)',
+      include8: 'Bonus: Smart Chat Bot Komponente',
+      include9: 'Scroll-Animationen mit Intersection Observer',
+      include10: 'Formular-Validierung mit Barrierefreiheit',
+      include11: 'SEO-Struktur (Meta Tags, Schema Markup)',
+      include12: 'Analytics-Bereit (GA4-Integration)',
+      include13: 'Lighthouse 95+ Performance-Ziel',
+      
+      // Technical specs
+      technologyTitle: 'Technologie-Stack',
+      tech1: 'HTML5',
+      tech2: 'Tailwind CSS v3.4+',
+      tech3: 'Modernes JavaScript ES6+',
+      tech4: 'npm Build-System',
+      
+      compatibilityTitle: 'Kompatibilität',
+      compat1: 'Alle modernen Browser',
+      compat2: 'Mobile-first responsive Design',
+      compat3: 'Dunkel/Hell Modus',
+      compat4: 'SEO-optimiert',
+      
+      // Guarantees
+      guaranteeInstant: 'Sofortiger Download nach Kauf',
+      guaranteeUpdates: 'Lebenslange Updates enthalten',
+      guaranteeSupport: 'Community-Support-Zugang',
+      
+      // Call to Action
+      ctaTitle: 'Bereit, Ihre SaaS Landing Pages zu verwandeln?',
+      ctaDescription: 'Holen Sie sich jetzt Ihr Starter-Pack!',
+      ctaButton: 'Sofortigen Zugang Erhalten - $29',
+      
+      // Built by
+      builtBy: 'Gebaut von Informatikingenieur',
+      
+      // Actions & Buttons
+      getInstantAccess: 'Sofortigen Zugang Erhalten',
+      liveDemo: 'Live-Demo',
+      
+      // Technical section title
+      technicalInfoTitle: 'Technische Informationen'
     },
     
     // CTA Section

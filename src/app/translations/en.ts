@@ -188,27 +188,104 @@ export const englishTranslations: Translation = {
     // SaaS Template Specific
     saasTemplate: {
       title: 'SaaS Landing Page Starter Pack',
-      shortDescription: 'Professional SaaS landing page template pack',
-      description: 'Complete professional SaaS landing page template pack with 11 unique themes, 100% Tailwind CSS architecture and modular component system. Specifically designed to maximize conversions and deliver a perfect mobile experience.',
+      shortDescription: 'Complete professional SaaS landing page template pack with 11 unique themes, dark mode, and modern tech stack',
+      description: 'Transform Your SaaS Business with Professional Landing Pages. Launch your SaaS with confidence using this complete starter pack built by a Computer Engineer with years of experience creating high-converting pages.',
       heroFeature: '11 professional themes with light and dark mode included',
-      feature1: '11 unique professional themes (light & dark)',
-      feature2: '100% Tailwind CSS architecture',
-      feature3: 'Reusable modular component system',
-      feature4: 'Conversion-optimized and mobile-first',
-      feature5: 'Clean, well-documented code',
-      feature6: 'Easy customization and maintenance',
-      includes1: '11 complete HTML templates',
-      includes2: 'Compiled and source CSS files',
-      includes3: 'Complete installation documentation',
-      includes4: 'Detailed customization guide',
-      includes5: '6-month technical support',
-      compatibility1: 'All modern browsers',
-      compatibility2: 'Responsive on all devices',
-      compatibility3: 'Compatible with popular frameworks',
-      perfectFor: 'Perfect for:',
-      perfectFor1: 'SaaS startups and entrepreneurs',
-      perfectFor2: 'Freelance web developers',
-      perfectFor3: 'Digital marketing agencies'
+      
+      // Overview section
+      overviewTitle: 'Complete SaaS Landing Page System',
+      
+      // Package Contents
+      packageContentsTitle: 'Package Contents',
+      packageSection1: '11 Professional Themes',
+      packageSection2: '2 Complete Templates',
+      packageSection3: 'Modern Tech Stack',
+      
+      // Theme showcase
+      themesTitle: 'All 11 Professional Themes',
+      themesSubtitle: 'Each theme includes Light + Dark mode variations',
+      
+      // Use Cases
+      useCasesTitle: 'Use Cases',
+      useCase1: 'SaaS startups launching new products',
+      useCase2: 'B2B software companies needing professional pages',
+      useCase3: 'Digital agencies delivering client projects',
+      useCase4: 'Entrepreneurs building software businesses',
+      useCase5: 'Developers wanting modern, maintainable templates',
+      
+      // Features
+      featuresTitle: 'Features',
+      feature1: 'Quick Setup - npm install, customize, deploy',
+      feature2: 'Theme Switching - Users can switch between 11 themes',
+      feature3: 'Mobile Optimized - Perfect on all devices',
+      feature4: 'Built with modern web standards',
+      feature5: 'Complete Documentation',
+      feature6: 'Conversion Optimized - Based on analysis of successful SaaS pages',
+      feature7: 'Built by Expert - Computer Engineer with modern web development expertise',
+      feature8: 'Future Proof - Uses current web standards and best practices',
+      
+      // Bonus Features
+      bonusFeaturesTitle: 'Bonus Features',
+      bonusFeature1: 'Smart Chat Bot (demo) - Interactive widget with theme awareness',
+      bonusFeature2: 'Scroll Animations - Smooth reveal effects',
+      bonusFeature3: 'Analytics Ready - Easy integration with GA4, tracking events',
+      bonusFeature4: 'Form Ready - Netlify, Formspree, custom backend support',
+      
+      // Why Choose This Pack
+      whyChooseTitle: 'Why Choose This Pack?',
+      whyReason1: 'Built by Expert - Computer Engineer with modern web development expertise',
+      whyReason2: 'Business Focused - Designed specifically for SaaS business models',
+      whyReason3: 'Future Proof - Uses current web standards and best practices',
+      whyReason4: 'Ongoing Value - Learn modern development patterns',
+      
+      // What's Included
+      whatsIncludedTitle: 'What\'s Included',
+      include1: '2 Complete Landing Pages (Main + Signup)',
+      include2: '11 Professional Themes with Light + Dark Mode',
+      include3: '12 Modular HTML Components',
+      include4: '100% Tailwind CSS Architecture',
+      include5: 'JavaScript Theme Switcher with localStorage',
+      include6: 'Complete Documentation (Setup, Customization, Components)',
+      include7: 'npm Build Tools (dev/build/preview)',
+      include8: 'Bonus: Smart Chat Bot Component',
+      include9: 'Scroll Animations with Intersection Observer',
+      include10: 'Form Validation with Accessibility',
+      include11: 'SEO Structure (Meta Tags, Schema Markup)',
+      include12: 'Analytics Ready (GA4 integration)',
+      include13: 'Lighthouse 95+ Performance Target',
+      
+      // Technical specs
+      technologyTitle: 'Technology Stack',
+      tech1: 'HTML5',
+      tech2: 'Tailwind CSS v3.4+',
+      tech3: 'Modern JavaScript ES6+',
+      tech4: 'npm Build System',
+      
+      compatibilityTitle: 'Compatibility',
+      compat1: 'All modern browsers',
+      compat2: 'Mobile-first responsive design',
+      compat3: 'Dark/light mode',
+      compat4: 'SEO optimized',
+      
+      // Guarantees
+      guaranteeInstant: 'Instant download after purchase',
+      guaranteeUpdates: 'Lifetime updates included',
+      guaranteeSupport: 'Community support access',
+      
+      // Call to Action
+      ctaTitle: 'Ready to transform your SaaS landing pages?',
+      ctaDescription: 'Get your starter pack now!',
+      ctaButton: 'Get Instant Access - $29',
+      
+      // Built by
+      builtBy: 'Built by Computer Engineer',
+      
+      // Actions & Buttons
+      getInstantAccess: 'Get Instant Access',
+      liveDemo: 'Live Demo',
+      
+      // Technical section title
+      technicalInfoTitle: 'Technical Information'
     },
     
     // CTA Section

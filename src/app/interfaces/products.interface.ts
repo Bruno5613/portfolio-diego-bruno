@@ -113,24 +113,101 @@ export interface ProductsTranslation {
     shortDescription: string;
     description: string;
     heroFeature: string;
+    
+    // Overview
+    overviewTitle: string;
+    
+    // Package Contents
+    packageContentsTitle: string;
+    packageSection1: string;
+    packageSection2: string;
+    packageSection3: string;
+    
+    // Themes
+    themesTitle: string;
+    themesSubtitle: string;
+    
+    // Use Cases
+    useCasesTitle: string;
+    useCase1: string;
+    useCase2: string;
+    useCase3: string;
+    useCase4: string;
+    useCase5: string;
+    
+    // Features
+    featuresTitle: string;
     feature1: string;
     feature2: string;
     feature3: string;
     feature4: string;
     feature5: string;
     feature6: string;
-    includes1: string;
-    includes2: string;
-    includes3: string;
-    includes4: string;
-    includes5: string;
-    compatibility1: string;
-    compatibility2: string;
-    compatibility3: string;
-    perfectFor: string;
-    perfectFor1: string;
-    perfectFor2: string;
-    perfectFor3: string;
+    feature7: string;
+    feature8: string;
+    
+    // Bonus Features
+    bonusFeaturesTitle: string;
+    bonusFeature1: string;
+    bonusFeature2: string;
+    bonusFeature3: string;
+    bonusFeature4: string;
+    
+    // Why Choose
+    whyChooseTitle: string;
+    whyReason1: string;
+    whyReason2: string;
+    whyReason3: string;
+    whyReason4: string;
+    
+    // What's Included
+    whatsIncludedTitle: string;
+    include1: string;
+    include2: string;
+    include3: string;
+    include4: string;
+    include5: string;
+    include6: string;
+    include7: string;
+    include8: string;
+    include9: string;
+    include10: string;
+    include11: string;
+    include12: string;
+    include13: string;
+    
+    // Technical
+    technologyTitle: string;
+    tech1: string;
+    tech2: string;
+    tech3: string;
+    tech4: string;
+    
+    compatibilityTitle: string;
+    compat1: string;
+    compat2: string;
+    compat3: string;
+    compat4: string;
+    
+    // Guarantees
+    guaranteeInstant: string;
+    guaranteeUpdates: string;
+    guaranteeSupport: string;
+    
+    // Call to Action
+    ctaTitle: string;
+    ctaDescription: string;
+    ctaButton: string;
+    
+    // Built by
+    builtBy: string;
+    
+    // Actions & Buttons
+    getInstantAccess: string;
+    liveDemo: string;
+    
+    // Technical section title
+    technicalInfoTitle: string;
   };
   
   // CTA Section
