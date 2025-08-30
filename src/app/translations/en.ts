@@ -6,6 +6,7 @@ export const englishTranslations: Translation = {
     experience: 'Experience',
     skills: 'Skills',
     projects: 'Projects',
+    products: 'Products',
     services: 'Services',
     contact: 'Contact'
   },
@@ -127,6 +128,103 @@ export const englishTranslations: Translation = {
     petirrojoFeature1: 'Visual dashboards and compliance reporting',
     petirrojoFeature2: 'Document management and automated notifications',
     petirrojoFeature3: 'Role-based access control with JWT authentication'
+  },
+  products: {
+    // Navigation & General
+    pageTitle: 'Digital Products',
+    subtitle: 'Premium Templates &',
+    description: 'Professional digital products designed to accelerate your development and create exceptional experiences',
+    digitalProducts: 'Digital Products',
+    
+    // Hero Section
+    heroTitle: 'Professional-Grade Templates & Digital Products',
+    heroSubtitle: 'Accelerate your development with our premium products',
+    heroDescription: 'Discover our collection of templates, extensions, and tools designed for developers and entrepreneurs seeking high-quality solutions.',
+    
+    // Product Categories
+    templates: 'Templates',
+    extensions: 'Extensions',
+    apis: 'APIs',
+    allProducts: 'All Products',
+    
+    // Product Details
+    features: 'Features',
+    specifications: 'Specifications',
+    includes: 'Includes',
+    technology: 'Technology',
+    compatibility: 'Compatibility',
+    
+    // Actions & Links
+    viewDemo: 'View Demo',
+    buyNow: 'Buy Now',
+    viewDetails: 'View Details',
+    getStarted: 'Get Started',
+    downloadFree: 'Free Download',
+    
+    // Pricing & Offers
+    price: 'Price',
+    originalPrice: 'Original Price',
+    discount: 'Discount',
+    limitedTime: 'Limited Time',
+    freeDownload: 'Free Download',
+    
+    // Social Proof & Stats
+    downloads: 'Downloads',
+    rating: 'Rating',
+    reviews: 'Reviews',
+    customers: 'Customers',
+    satisfaction: 'Satisfaction',
+    
+    // Features & Benefits
+    responsiveDesign: 'Responsive Design',
+    mobileFirst: 'Mobile-First',
+    crossBrowser: 'Cross-Browser Compatible',
+    seoOptimized: 'SEO Optimized',
+    fastLoading: 'Fast Loading',
+    easyCustomization: 'Easy Customization',
+    documentation: 'Complete Documentation',
+    support: 'Technical Support',
+    
+    // SaaS Template Specific
+    saasTemplate: {
+      title: 'SaaS Landing Page Starter Pack',
+      shortDescription: 'Professional SaaS landing page template pack',
+      description: 'Complete professional SaaS landing page template pack with 11 unique themes, 100% Tailwind CSS architecture and modular component system. Specifically designed to maximize conversions and deliver a perfect mobile experience.',
+      heroFeature: '11 professional themes with light and dark mode included',
+      feature1: '11 unique professional themes (light & dark)',
+      feature2: '100% Tailwind CSS architecture',
+      feature3: 'Reusable modular component system',
+      feature4: 'Conversion-optimized and mobile-first',
+      feature5: 'Clean, well-documented code',
+      feature6: 'Easy customization and maintenance',
+      includes1: '11 complete HTML templates',
+      includes2: 'Compiled and source CSS files',
+      includes3: 'Complete installation documentation',
+      includes4: 'Detailed customization guide',
+      includes5: '6-month technical support',
+      compatibility1: 'All modern browsers',
+      compatibility2: 'Responsive on all devices',
+      compatibility3: 'Compatible with popular frameworks',
+      perfectFor: 'Perfect for:',
+      perfectFor1: 'SaaS startups and entrepreneurs',
+      perfectFor2: 'Freelance web developers',
+      perfectFor3: 'Digital marketing agencies'
+    },
+    
+    // CTA Section
+    ctaTitle: 'Ready to Accelerate Your Project?',
+    ctaDescription: 'Join hundreds of developers and entrepreneurs who are already using our products to create amazing digital experiences.',
+    ctaButton: 'View All Products',
+    
+    // Testimonials & Reviews
+    whatClientsSay: 'What our clients say',
+    testimonialText: 'Excellent quality and professional design. Saved me weeks of development.',
+    testimonialAuthor: 'Verified Customer',
+    
+    // Coming Soon
+    comingSoon: 'Coming Soon',
+    stayTuned: 'Stay Tuned',
+    moreProducts: 'More amazing products on the way'
   },
   services: {
     title: 'What I can do for you',

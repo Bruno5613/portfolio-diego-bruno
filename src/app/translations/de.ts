@@ -6,6 +6,7 @@ export const germanTranslations: Translation = {
     experience: 'Erfahrung',
     skills: 'Fähigkeiten',
     projects: 'Projekte',
+    products: 'Produkte',
     services: 'Dienstleistungen',
     contact: 'Kontakt'
   },
@@ -127,6 +128,103 @@ export const germanTranslations: Translation = {
     petirrojoFeature1: 'Visuelle Dashboards und Compliance-Berichte',
     petirrojoFeature2: 'Dokumentenmanagement und automatisierte Benachrichtigungen',
     petirrojoFeature3: 'Rollenbasierte Zugriffskontrolle mit JWT-Authentifizierung'
+  },
+  products: {
+    // Navigation & General
+    pageTitle: 'Digitale Produkte',
+    subtitle: 'Premium Vorlagen &',
+    description: 'Professionelle digitale Produkte zur Beschleunigung Ihrer Entwicklung und Schaffung außergewöhnlicher Erfahrungen',
+    digitalProducts: 'Digitale Produkte',
+    
+    // Hero Section
+    heroTitle: 'Professionelle Vorlagen & Digitale Produkte',
+    heroSubtitle: 'Beschleunigen Sie Ihre Entwicklung mit unseren Premium-Produkten',
+    heroDescription: 'Entdecken Sie unsere Sammlung von Vorlagen, Erweiterungen und Tools für Entwickler und Unternehmer, die hochwertige Lösungen suchen.',
+    
+    // Product Categories
+    templates: 'Vorlagen',
+    extensions: 'Erweiterungen',
+    apis: 'APIs',
+    allProducts: 'Alle Produkte',
+    
+    // Product Details
+    features: 'Funktionen',
+    specifications: 'Spezifikationen',
+    includes: 'Enthält',
+    technology: 'Technologie',
+    compatibility: 'Kompatibilität',
+    
+    // Actions & Links
+    viewDemo: 'Demo Anzeigen',
+    buyNow: 'Jetzt Kaufen',
+    viewDetails: 'Details Anzeigen',
+    getStarted: 'Loslegen',
+    downloadFree: 'Kostenloser Download',
+    
+    // Pricing & Offers
+    price: 'Preis',
+    originalPrice: 'Ursprünglicher Preis',
+    discount: 'Rabatt',
+    limitedTime: 'Begrenzte Zeit',
+    freeDownload: 'Kostenloser Download',
+    
+    // Social Proof & Stats
+    downloads: 'Downloads',
+    rating: 'Bewertung',
+    reviews: 'Rezensionen',
+    customers: 'Kunden',
+    satisfaction: 'Zufriedenheit',
+    
+    // Features & Benefits
+    responsiveDesign: 'Responsive Design',
+    mobileFirst: 'Mobile-First',
+    crossBrowser: 'Browser-übergreifend Kompatibel',
+    seoOptimized: 'SEO-Optimiert',
+    fastLoading: 'Schnelles Laden',
+    easyCustomization: 'Einfache Anpassung',
+    documentation: 'Vollständige Dokumentation',
+    support: 'Technischer Support',
+    
+    // SaaS Template Specific
+    saasTemplate: {
+      title: 'SaaS Landing Page Starter Pack',
+      shortDescription: 'Professionelles SaaS Landing Page Template-Paket',
+      description: 'Vollständiges professionelles SaaS Landing Page Template-Paket mit 11 einzigartigen Themes, 100% Tailwind CSS Architektur und modularem Komponentensystem. Speziell entwickelt zur Maximierung von Konversionen und für perfekte mobile Erfahrung.',
+      heroFeature: '11 professionelle Themes mit hellem und dunklem Modus enthalten',
+      feature1: '11 einzigartige professionelle Themes (hell & dunkel)',
+      feature2: '100% Tailwind CSS Architektur',
+      feature3: 'Wiederverwendbares modulares Komponentensystem',
+      feature4: 'Konversions-optimiert und Mobile-First',
+      feature5: 'Sauberer, gut dokumentierter Code',
+      feature6: 'Einfache Anpassung und Wartung',
+      includes1: '11 vollständige HTML-Vorlagen',
+      includes2: 'Kompilierte und Quell-CSS-Dateien',
+      includes3: 'Vollständige Installationsdokumentation',
+      includes4: 'Detaillierte Anpassungsanleitung',
+      includes5: '6-monatiger technischer Support',
+      compatibility1: 'Alle modernen Browser',
+      compatibility2: 'Responsive auf allen Geräten',
+      compatibility3: 'Kompatibel mit beliebten Frameworks',
+      perfectFor: 'Perfekt für:',
+      perfectFor1: 'SaaS-Startups und Unternehmer',
+      perfectFor2: 'Freiberufliche Webentwickler',
+      perfectFor3: 'Digital Marketing Agenturen'
+    },
+    
+    // CTA Section
+    ctaTitle: 'Bereit, Ihr Projekt zu Beschleunigen?',
+    ctaDescription: 'Schließen Sie sich Hunderten von Entwicklern und Unternehmern an, die bereits unsere Produkte nutzen, um erstaunliche digitale Erfahrungen zu schaffen.',
+    ctaButton: 'Alle Produkte Anzeigen',
+    
+    // Testimonials & Reviews
+    whatClientsSay: 'Was unsere Kunden sagen',
+    testimonialText: 'Ausgezeichnete Qualität und professionelles Design. Hat mir wochenlange Entwicklung erspart.',
+    testimonialAuthor: 'Verifizierter Kunde',
+    
+    // Coming Soon
+    comingSoon: 'Demnächst',
+    stayTuned: 'Bleiben Sie dran',
+    moreProducts: 'Weitere erstaunliche Produkte sind auf dem Weg'
   },
   services: {
     title: 'Was ich für Sie tun kann',

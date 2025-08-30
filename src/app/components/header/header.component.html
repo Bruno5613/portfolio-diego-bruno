@@ -4,17 +4,18 @@
   <div class="container-max">
     <div class="flex justify-between items-center py-3 md:py-4">
       <!-- Logo optimizado para móvil -->
-      <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-primary-900 dark:text-white hover:text-accent-600 dark:hover:text-accent-400 transition-colors cursor-pointer ml-2 md:ml-0">Diego Bruno</h2>
+      <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-primary-900 dark:text-white hover:text-accent-600 dark:hover:text-accent-400 transition-colors cursor-pointer ml-2 md:ml-0" (click)="navigateToHome()">Diego Bruno</h2>
       
       <div class="flex items-center space-x-3 md:space-x-8">
         <!-- Navegación oculta en móvil -->
         <div class="hidden md:flex space-x-8">
-          <a href="#about" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">{{ t.nav.about }}</a>
-          <a href="#experience" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">{{ t.nav.experience }}</a>
-          <a href="#skills" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">{{ t.nav.skills }}</a>
-          <a href="#projects" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">{{ t.nav.projects }}</a>
-          <a href="#services" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">{{ t.nav.services }}</a>
-          <a href="#contact" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105">{{ t.nav.contact }}</a>
+          <a (click)="navigateToSection('about')" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105 cursor-pointer">{{ t.nav.about }}</a>
+          <a (click)="navigateToSection('experience')" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105 cursor-pointer">{{ t.nav.experience }}</a>
+          <a (click)="navigateToSection('skills')" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105 cursor-pointer">{{ t.nav.skills }}</a>
+          <a (click)="navigateToSection('projects')" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105 cursor-pointer">{{ t.nav.projects }}</a>
+          <a (click)="navigateToProducts()" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105 cursor-pointer">{{ t.nav.products }}</a>
+          <a (click)="navigateToSection('services')" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105 cursor-pointer">{{ t.nav.services }}</a>
+          <a (click)="navigateToSection('contact')" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105 cursor-pointer">{{ t.nav.contact }}</a>
         </div>
         
         <!-- Language Selector optimizado para móvil -->
@@ -54,34 +55,32 @@
          [class.opacity-100]="isMobileMenuOpen"
          [class.opacity-0]="!isMobileMenuOpen">
       <div class="py-4 space-y-2 bg-white/95 dark:bg-primary-900/95 backdrop-blur-sm border-t border-gray-200 dark:border-primary-700">
-        <a href="#about" 
-           class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2"
-           (click)="closeMobileMenu()">
+        <a (click)="navigateToSection('about')" 
+           class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2 cursor-pointer">
           {{ t.nav.about }}
         </a>
-        <a href="#experience" 
-           class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2"
-           (click)="closeMobileMenu()">
+        <a (click)="navigateToSection('experience')" 
+           class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2 cursor-pointer">
           {{ t.nav.experience }}
         </a>
-        <a href="#skills" 
-           class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2"
-           (click)="closeMobileMenu()">
+        <a (click)="navigateToSection('skills')" 
+           class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2 cursor-pointer">
           {{ t.nav.skills }}
         </a>
-        <a href="#projects" 
-           class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2"
-           (click)="closeMobileMenu()">
+        <a (click)="navigateToSection('projects')" 
+           class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2 cursor-pointer">
           {{ t.nav.projects }}
         </a>
-        <a href="#services" 
-           class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2"
-           (click)="closeMobileMenu()">
+        <a (click)="navigateToProducts()" 
+           class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2 cursor-pointer">
+          {{ t.nav.products }}
+        </a>
+        <a (click)="navigateToSection('services')" 
+           class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2 cursor-pointer">
           {{ t.nav.services }}
         </a>
-        <a href="#contact" 
-           class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2"
-           (click)="closeMobileMenu()">
+        <a (click)="navigateToSection('contact')" 
+           class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2 cursor-pointer">
           {{ t.nav.contact }}
         </a>
       </div>

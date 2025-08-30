@@ -2,21 +2,15 @@ import { Component, OnInit, AfterViewInit, Inject, PLATFORM_ID } from '@angular/
 import { isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 import { TranslationService } from './services/translation.service';
 import { Translation } from './interfaces/translation.interface';
 import { HeaderComponent } from './components/header/header.component';
-import { HeroComponent } from './components/hero/hero.component';
-import { AboutComponent } from './components/about/about.component';
-import { ExperienceComponent } from './components/experience/experience.component';
-import { SkillsComponent } from './components/skills/skills.component';
-import { ProjectsComponent } from './components/projects/projects.component';
-import { ServicesComponent } from './components/services/services.component';
-import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, CommonModule, HeaderComponent, HeroComponent, AboutComponent, ExperienceComponent, SkillsComponent, ProjectsComponent, ServicesComponent, ContactComponent, FooterComponent],
+  imports: [FormsModule, CommonModule, RouterOutlet, HeaderComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

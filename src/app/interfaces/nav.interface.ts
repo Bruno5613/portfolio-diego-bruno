@@ -3,6 +3,7 @@ export interface NavTranslation {
   experience: string;
   skills: string;
   projects: string;
+  products: string;
   services: string;
   contact: string;
 }

@@ -4,6 +4,7 @@ import { AboutTranslation } from './about.interface';
 import { ExperienceTranslation } from './experience.interface';
 import { SkillsTranslation } from './skills.interface';
 import { ProjectsTranslation } from './projects.interface';
+import { ProductsTranslation } from './products.interface';
 import { ContactTranslation } from './contact.interface';
 import { FooterTranslation } from './footer.interface';
 import { ServicesTranslation } from './services.interface';
@@ -15,6 +16,7 @@ export interface Translation {
   experience: ExperienceTranslation;
   skills: SkillsTranslation;
   projects: ProjectsTranslation;
+  products: ProductsTranslation;
   services: ServicesTranslation;
   contact: ContactTranslation;
   footer: FooterTranslation;
