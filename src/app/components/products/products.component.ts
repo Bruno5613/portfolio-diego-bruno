@@ -268,9 +268,9 @@ export class ProductsComponent implements OnInit {
     const isCenterCard = visiblePosition === 1; // Center card in 3-card view
     
     if (isCenterCard) {
-      return 'w-2/5 flex-shrink-0 px-2 transform scale-105 z-10'; // Wider and slightly scaled up
+      return 'w-2/5 sm:w-2/5 flex-shrink-0 px-1 sm:px-2 transform scale-105 z-10'; // Wider and slightly scaled up
     } else {
-      return 'w-1/3 flex-shrink-0 px-3'; // Standard size, no scaling
+      return 'w-1/3 sm:w-1/3 flex-shrink-0 px-1 sm:px-3'; // Standard size, no scaling
     }
   }
 

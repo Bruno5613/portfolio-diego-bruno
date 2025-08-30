@@ -2,8 +2,8 @@
 <div class="min-h-screen bg-white dark:bg-gray-900" *ngFor="let product of products; trackBy: trackByProduct">
   
   <!-- Navigation Breadcrumb -->
-  <div class="bg-gray-50 dark:bg-gray-800/50 border-b border-gray-200 dark:border-gray-700 pt-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+  <div class="bg-gray-50 dark:bg-gray-800/50 border-b border-gray-200 dark:border-gray-700 pt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
       <nav class="text-sm">
         <span class="text-gray-500 dark:text-gray-400">Products</span>
         <span class="text-gray-400 mx-2">/</span>
@@ -12,41 +12,42 @@
     </div>
   </div>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="grid lg:grid-cols-3 gap-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-8">
+    <div class="flex flex-col lg:grid lg:grid-cols-3 gap-4 lg:gap-8">
       
       <!-- Main Content -->
-      <div class="lg:col-span-2">
+      <div class="order-1 lg:order-1 lg:col-span-2">
         
         <!-- Product Header -->
         <div class="mb-8">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">{{ product.category }}</span>
-            <span *ngIf="product.isNew" class="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">New</span>
-            <span *ngIf="product.isFeatured" class="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200 px-3 py-1 rounded-full text-sm font-medium">Best Seller</span>
-            <span *ngIf="product.discount" class="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 px-3 py-1 rounded-full text-sm font-medium">{{ product.discount }}% OFF</span>
+          <div class="flex items-center gap-1 sm:gap-3 mb-4">
+            <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium">{{ product.category }}</span>
+            <span *ngIf="product.isNew" class="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium">New</span>
+            <span *ngIf="product.isFeatured" class="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200 px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium">Best Seller</span>
+            <span *ngIf="product.discount" class="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium">{{ product.discount }}% OFF</span>
           </div>
           
-          <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
             {{ t.products.saasTemplate.title }}
           </h1>
           
-          <p class="text-xl text-gray-600 dark:text-gray-300 mb-6">
+          <p class="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
             {{ t.products.saasTemplate.shortDescription }}
           </p>
 
           <!-- Stats -->
-          <div class="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-400">
+          <div class="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-400 mb-6">
             <span>{{ t.products.saasTemplate.builtBy }}</span>
           </div>
+
         </div>
 
         <!-- Interactive Carousel -->
-        <div class="mb-8" *ngIf="product.images.carousel">
+        <div class="mb-6 lg:mb-8" *ngIf="product.images.carousel">
           <div class="relative max-w-5xl mx-auto">
             
             <!-- Carousel Content -->
-            <div class="relative overflow-hidden rounded-lg aspect-video">
+            <div class="relative overflow-hidden rounded-lg aspect-video sm:aspect-[16/10] lg:aspect-video">
               
               <!-- Slides -->
               <div class="relative h-full">
@@ -81,15 +82,15 @@
 
               <!-- Navigation Arrows -->
               <button (click)="prevSlide(product)" 
-                      class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-all duration-200">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      class="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-1.5 sm:p-2 transition-all duration-200">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                 </svg>
               </button>
               
               <button (click)="nextSlide(product)" 
-                      class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-all duration-200">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      class="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-1.5 sm:p-2 transition-all duration-200">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                 </svg>
               </button>
@@ -110,22 +111,46 @@
           </div>
         </div>
 
+        <!-- Mobile CTA después del carousel - Solo visible en móvil -->
+        <div class="lg:hidden bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-4 mb-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span *ngIf="product.originalPrice" class="text-sm text-gray-500 dark:text-gray-400 line-through">{{ product.originalPrice }}</span>
+                <span class="text-xl font-bold text-gray-900 dark:text-white">{{ product.price }}</span>
+                <span *ngIf="product.discount" class="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-xs px-2 py-1 rounded-full font-medium">{{ product.discount }}% OFF</span>
+              </div>
+              <p class="text-xs text-gray-600 dark:text-gray-400">{{ t.products.saasTemplate.guaranteeInstant }}</p>
+            </div>
+            <div class="flex flex-col gap-2">
+              <a [href]="product.links.purchase" target="_blank" 
+                 class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-sm text-center whitespace-nowrap">
+                {{ t.products.saasTemplate.getInstantAccess }}
+              </a>
+              <a [href]="product.links.demo" target="_blank" 
+                 class="bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white font-medium py-2 px-4 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors text-sm text-center whitespace-nowrap">
+                {{ t.products.saasTemplate.liveDemo }}
+              </a>
+            </div>
+          </div>
+        </div>
+
         <!-- Product Overview -->
-        <div class="mb-12">
+        <div class="mb-8 lg:mb-12">
           <div class="prose prose-lg max-w-none dark:prose-invert">
-            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">{{ t.products.saasTemplate.overviewTitle }}</h2>
-            <p class="text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4 lg:mb-6">{{ t.products.saasTemplate.overviewTitle }}</h2>
+            <p class="text-base sm:text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-6 lg:mb-8 leading-relaxed">
               {{ t.products.saasTemplate.description }}
             </p>
           </div>
         </div>
 
         <!-- Package Contents -->
-        <div class="mb-12" *ngIf="product.whatYouGet">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{{ t.products.saasTemplate.packageContentsTitle }}</h2>
+        <div class="mb-8 lg:mb-12" *ngIf="product.whatYouGet">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 lg:mb-8">{{ t.products.saasTemplate.packageContentsTitle }}</h2>
           
-          <div class="grid lg:grid-cols-3 gap-6">
-            <div *ngFor="let section of product.whatYouGet" class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+            <div *ngFor="let section of product.whatYouGet" class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 lg:p-6">
               <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">{{ section.title }}</h3>
               <ul class="space-y-2">
                 <li *ngFor="let item of section.items" class="flex items-start text-sm">
@@ -138,16 +163,16 @@
         </div>
 
         <!-- Theme Showcase Infinite Carousel -->
-        <div class="mb-16" *ngIf="product.themes">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">{{ t.products.saasTemplate.themesTitle }}</h2>
-          <p class="text-lg text-gray-600 dark:text-gray-400 text-center mb-10">{{ t.products.saasTemplate.themesSubtitle }}</p>
+        <div class="mb-8 lg:mb-16" *ngIf="product.themes">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 lg:mb-8 text-center">{{ t.products.saasTemplate.themesTitle }}</h2>
+          <p class="text-base sm:text-lg text-gray-600 dark:text-gray-400 text-center mb-6 lg:mb-10">{{ t.products.saasTemplate.themesSubtitle }}</p>
           
           <div class="relative max-w-6xl mx-auto" 
                (mouseenter)="pauseAutoScroll()" 
                (mouseleave)="resumeAutoScroll()">
             
             <!-- Carousel Container -->
-            <div class="overflow-hidden rounded-2xl py-8 relative" style="z-index: 1;">
+            <div class="overflow-hidden rounded-lg sm:rounded-2xl py-6 lg:py-8 relative" style="z-index: 1;">
               <div class="flex transition-transform duration-500 ease-in-out"
                    [style.transform]="'translateX(-' + (currentUseCaseSlide * 33.333) + '%)'">
                 
@@ -186,15 +211,15 @@
 
             <!-- Navigation Arrows -->
             <button (click)="prevUseCaseSlide()" 
-                    class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-800 text-gray-800 dark:text-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 z-10">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    class="absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-800 text-gray-800 dark:text-white rounded-full p-2 sm:p-3 shadow-lg transition-all duration-200 hover:scale-110 z-10">
+              <svg class="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
               </svg>
             </button>
             
             <button (click)="nextUseCaseSlide()" 
-                    class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-800 text-gray-800 dark:text-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 z-10">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    class="absolute right-1 sm:right-4 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-800 text-gray-800 dark:text-white rounded-full p-2 sm:p-3 shadow-lg transition-all duration-200 hover:scale-110 z-10">
+              <svg class="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
               </svg>
             </button>
@@ -202,35 +227,35 @@
         </div>
 
         <!-- Perfect For -->
-        <div class="mb-16" *ngIf="product.perfectFor">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{{ t.products.saasTemplate.useCasesTitle }}</h2>
-          <div class="space-y-3">
+        <div class="mb-8 lg:mb-16" *ngIf="product.perfectFor">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 lg:mb-8">{{ t.products.saasTemplate.useCasesTitle }}</h2>
+          <div class="space-y-2 sm:space-y-3">
             <div class="flex items-center">
-              <div class="w-2 h-2 bg-blue-500 rounded-full mr-4 flex-shrink-0"></div>
-              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.useCase1 }}</span>
+              <div class="w-2 h-2 bg-blue-500 rounded-full mr-3 sm:mr-4 flex-shrink-0"></div>
+              <span class="text-base sm:text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.useCase1 }}</span>
             </div>
             <div class="flex items-center">
-              <div class="w-2 h-2 bg-blue-500 rounded-full mr-4 flex-shrink-0"></div>
-              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.useCase2 }}</span>
+              <div class="w-2 h-2 bg-blue-500 rounded-full mr-3 sm:mr-4 flex-shrink-0"></div>
+              <span class="text-base sm:text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.useCase2 }}</span>
             </div>
             <div class="flex items-center">
-              <div class="w-2 h-2 bg-blue-500 rounded-full mr-4 flex-shrink-0"></div>
-              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.useCase3 }}</span>
+              <div class="w-2 h-2 bg-blue-500 rounded-full mr-3 sm:mr-4 flex-shrink-0"></div>
+              <span class="text-base sm:text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.useCase3 }}</span>
             </div>
             <div class="flex items-center">
-              <div class="w-2 h-2 bg-blue-500 rounded-full mr-4 flex-shrink-0"></div>
-              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.useCase4 }}</span>
+              <div class="w-2 h-2 bg-blue-500 rounded-full mr-3 sm:mr-4 flex-shrink-0"></div>
+              <span class="text-base sm:text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.useCase4 }}</span>
             </div>
             <div class="flex items-center">
-              <div class="w-2 h-2 bg-blue-500 rounded-full mr-4 flex-shrink-0"></div>
-              <span class="text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.useCase5 }}</span>
+              <div class="w-2 h-2 bg-blue-500 rounded-full mr-3 sm:mr-4 flex-shrink-0"></div>
+              <span class="text-base sm:text-lg text-gray-700 dark:text-gray-300">{{ t.products.saasTemplate.useCase5 }}</span>
             </div>
           </div>
         </div>
 
         <!-- Features -->
-        <div class="mb-16" *ngIf="product.keyHighlights">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{{ t.products.saasTemplate.featuresTitle }}</h2>
+        <div class="mb-8 lg:mb-16" *ngIf="product.keyHighlights">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 lg:mb-8">{{ t.products.saasTemplate.featuresTitle }}</h2>
           <div class="space-y-3">
             <div class="flex items-center">
               <div class="w-2 h-2 bg-green-500 rounded-full mr-4 flex-shrink-0"></div>
@@ -268,8 +293,8 @@
         </div>
 
         <!-- Technical Information -->
-        <div class="mb-16">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{{ t.products.saasTemplate.technicalInfoTitle }}</h2>
+        <div class="mb-8 lg:mb-16">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 lg:mb-8">{{ t.products.saasTemplate.technicalInfoTitle }}</h2>
           <div class="grid md:grid-cols-2 gap-6">
             <!-- Technology Stack -->
             <div class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
@@ -324,8 +349,8 @@
         </div>
 
         <!-- What's Included -->
-        <div class="mb-12">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">{{ t.products.saasTemplate.whatsIncludedTitle }}</h2>
+        <div class="mb-8 lg:mb-12">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 lg:mb-8 text-center">{{ t.products.saasTemplate.whatsIncludedTitle }}</h2>
           <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
             <div class="bg-gray-900 dark:bg-gray-700 rounded-lg p-6 mb-6 font-mono text-sm text-green-400">
               <div>saas-landing-page-starter-pack/</div>
@@ -394,8 +419,8 @@
         </div>
 
         <!-- Bonus Features -->
-        <div class="mb-16">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{{ t.products.saasTemplate.bonusFeaturesTitle }}</h2>
+        <div class="mb-8 lg:mb-16">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 lg:mb-8">{{ t.products.saasTemplate.bonusFeaturesTitle }}</h2>
           <div class="space-y-3">
             <div class="flex items-center">
               <div class="w-2 h-2 bg-orange-500 rounded-full mr-4 flex-shrink-0"></div>
@@ -417,8 +442,8 @@
         </div>
 
         <!-- Why Choose This Pack -->
-        <div class="mb-16">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{{ t.products.saasTemplate.whyChooseTitle }}</h2>
+        <div class="mb-8 lg:mb-16">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 lg:mb-8">{{ t.products.saasTemplate.whyChooseTitle }}</h2>
           <div class="space-y-3">
             <div class="flex items-center">
               <div class="w-2 h-2 bg-indigo-500 rounded-full mr-4 flex-shrink-0"></div>
@@ -440,7 +465,7 @@
         </div>
 
         <!-- Call to Action -->
-        <div class="mb-16">
+        <div class="mb-8 lg:mb-16">
           <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 text-center">
             <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">{{ t.products.saasTemplate.ctaTitle }}</h2>
             <p class="text-xl text-gray-600 dark:text-gray-400 mb-6">{{ t.products.saasTemplate.ctaDescription }}</p>
@@ -450,12 +475,13 @@
           </div>
         </div>
 
+
       </div>
       
-      <!-- Sticky Sidebar -->
-      <div class="lg:col-span-1">
+      <!-- Sticky Sidebar - Solo visible en desktop -->
+      <div class="hidden lg:block lg:order-2 lg:col-span-1">
         <div class="sticky top-24" style="z-index: 10;">
-          <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 shadow-md mb-6">
+          <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 sm:p-6 shadow-md mb-4 lg:mb-6">
             <!-- Pricing -->
             <div class="text-center mb-6">
               <div class="flex items-center justify-center gap-3 mb-2">

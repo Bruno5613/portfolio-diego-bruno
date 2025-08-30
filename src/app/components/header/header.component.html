@@ -13,8 +13,8 @@
           <a (click)="navigateToSection('experience')" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105 cursor-pointer">{{ t.nav.experience }}</a>
           <a (click)="navigateToSection('skills')" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105 cursor-pointer">{{ t.nav.skills }}</a>
           <a (click)="navigateToSection('projects')" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105 cursor-pointer">{{ t.nav.projects }}</a>
-          <a (click)="navigateToProducts()" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105 cursor-pointer">{{ t.nav.products }}</a>
           <a (click)="navigateToSection('services')" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105 cursor-pointer">{{ t.nav.services }}</a>
+          <a (click)="navigateToProducts()" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105 cursor-pointer font-semibold relative after:content-[''] after:absolute after:w-1 after:h-1 after:bg-blue-500 after:rounded-full after:-top-1 after:-right-1">{{ t.nav.products }}</a>
           <a (click)="navigateToSection('contact')" class="text-primary-700 dark:text-primary-300 hover:text-accent-600 transition-all duration-300 hover:scale-105 cursor-pointer">{{ t.nav.contact }}</a>
         </div>
         
@@ -71,13 +71,14 @@
            class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2 cursor-pointer">
           {{ t.nav.projects }}
         </a>
-        <a (click)="navigateToProducts()" 
-           class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2 cursor-pointer">
-          {{ t.nav.products }}
-        </a>
         <a (click)="navigateToSection('services')" 
            class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2 cursor-pointer">
           {{ t.nav.services }}
+        </a>
+        <a (click)="navigateToProducts()" 
+           class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2 cursor-pointer font-semibold relative">
+          {{ t.nav.products }}
+          <span class="absolute top-2 right-2 w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
         </a>
         <a (click)="navigateToSection('contact')" 
            class="block px-4 py-3 text-primary-700 dark:text-primary-300 hover:text-accent-600 hover:bg-primary-50 dark:hover:bg-primary-800 transition-all duration-200 rounded-lg mx-2 cursor-pointer">
