@@ -17,6 +17,15 @@ export interface ProjectsTranslation {
   vckyFeature1: string;
   vckyFeature2: string;
   vckyFeature3: string;
+  saasTemplateTitle: string;
+  digitalProduct: string;
+  saasTemplateDescription: string;
+  saasTemplateFeature1: string;
+  saasTemplateFeature2: string;
+  saasTemplateFeature3: string;
+  demoAvailable: string;
+  viewDemo: string;
+  buyNow: string;
   petirrojoTitle: string;
   angularProject: string;
   petirrojoDescription: string;
